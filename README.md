@@ -8,11 +8,39 @@ AI-powered intelligence assistant for Indian Government Officials. 100% offline,
 
 ## 📥 HOW TO DOWNLOAD THIS PROJECT
 
-1. **Look at the top of this page** - You'll see a **GREEN button** that says **"<> Code"**
-2. **Click the GREEN button**
-3. **Click "Download ZIP"**
-4. The ZIP file will download to your computer (usually in Downloads folder)
-5. **Remember where it downloaded!**
+### Follow These Steps to Download:
+
+1. **Scroll to the TOP of this GitHub page** (where you're reading this)
+
+2. **Look for a GREEN button** on the right side that says:
+   ```
+   <> Code  ▼
+   ```
+   (It's a bright green button, you can't miss it!)
+
+3. **Click the GREEN "<> Code" button**
+   - A small menu will appear
+
+4. **In the menu, click "Download ZIP"**
+   - It's at the bottom of the menu
+   - The full project will download as a ZIP file
+
+5. **The file will download** to your Downloads folder
+   - File name: `Saransh-Setu-App-main.zip`
+   - Size: About 500KB (small!)
+
+6. **Remember where it downloaded!**
+   - Usually: `C:\Users\YourName\Downloads\`
+
+**✅ Once downloaded, go to STEP 1 below to extract and install!**
+
+---
+
+### Alternative: If You Can't Find the Green Button
+
+1. **Copy this link**: `https://github.com/AnantShukla-Git-Hub/Saransh-Setu-App/archive/refs/heads/main.zip`
+2. **Paste it in your browser** address bar
+3. **Press Enter** - The ZIP file will download automatically
 
 ---
 
@@ -44,19 +72,25 @@ AI-powered intelligence assistant for Indian Government Officials. 100% offline,
    - Press `Windows Key + E` (opens File Explorer)
    - Click "Downloads" on the left side
 
-2. **Find the file** named `Saransh-Setu-FINAL-PROJECT-main.zip`
+2. **Find the file** named `Saransh-Setu-App-main.zip`
+   - It should be at the top (most recent file)
 
 3. **Right-click on the ZIP file**
 
 4. **Click "Extract All..."**
 
 5. **Choose where to save** (we recommend):
-   - Type: `C:\Saransh-Setu`
+   - Click "Browse..."
+   - Navigate to `C:\`
+   - Click "Make New Folder"
+   - Name it: `Saransh-Setu`
+   - Click "Select Folder"
    - Click "Extract"
 
 6. **Open the extracted folder**
+   - Go to: `C:\Saransh-Setu\Saransh-Setu-App-main\`
    - You should see folders named: `backend`, `frontend`, `electron`
-   - You should see files named: `setup.bat`, `README.md`
+   - You should see files named: `setup.bat`, `README.md`, `start.bat`
 
 **✅ CHECKPOINT:** If you see these folders and files, you're ready for Step 2!
 
@@ -248,7 +282,8 @@ Ollama runs the AI models that power the intelligence features.
 ### This is the MAIN setup that installs everything!
 
 1. **Open the folder** where you extracted Saransh Setu
-   - Example: `C:\Saransh-Setu`
+   - Example: `C:\Saransh-Setu\Saransh-Setu-App-main\`
+   - You should see `setup.bat` file here
 
 2. **Find the file** named `setup.bat`
    - It has a gear icon ⚙️
