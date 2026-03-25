@@ -61,7 +61,7 @@ AI-powered intelligence assistant for Indian Government Officials. 100% offline,
 1. **Do this setup only ONCE**
 2. **Follow EVERY step in order**
 3. **Do NOT skip any step**
-4. **Copy commands EXACTLY as written**
+4. **Copy commands EXACTLY as written** (use Ctrl+C to copy, right-click in CMD to paste)
 5. **Write down your username and password when asked!**
 
 ---
@@ -96,328 +96,369 @@ AI-powered intelligence assistant for Indian Government Officials. 100% offline,
 
 ---
 
-## STEP 2: Install Python
+## STEP 2: Open Command Prompt (CMD)
 
-### What is Python?
-Python is needed to run the AI brain of this application.
+### How to Open CMD:
 
-### Installation Steps:
+**Method 1 (Easiest):**
+1. Press `Windows Key + R` on your keyboard
+2. Type: `cmd`
+3. Press `Enter`
+4. A black window will open - this is Command Prompt
 
-1. **Open your web browser** (Chrome, Edge, Firefox)
+**Method 2:**
+1. Click the Windows Start button (bottom left)
+2. Type: `cmd`
+3. Click on "Command Prompt"
 
-2. **Type this address**: `https://www.python.org/downloads/`
+**✅ You should see a black window with white text!**
 
-3. **You will see a YELLOW button** that says **"Download Python 3.11.x"**
-   - Click this button
-   - A file will download (about 25MB)
+---
 
-4. **Find the downloaded file** (usually in Downloads folder)
-   - File name looks like: `python-3.11.x-amd64.exe`
+## STEP 3: Install Python Using CMD
 
-5. **Double-click the file** to start installation
+### Copy and paste these commands one by one:
 
-6. **⚠️ VERY IMPORTANT - FIRST SCREEN:**
-   - You will see a checkbox at the bottom: **"Add Python to PATH"**
-   - **✅ CHECK THIS BOX!** (This is CRITICAL!)
-   - Then click **"Install Now"**
+1. **In the CMD window, type this command** (or copy and paste):
+   ```
+   winget install Python.Python.3.11
+   ```
+   - Press `Enter`
+   - You'll see: "Do you agree to the source agreements terms? [Y/N]"
+   - Type: `Y` and press `Enter`
+   - Wait 2-3 minutes for installation
+   - You'll see "Successfully installed"
 
-7. **Wait for installation** (takes 2-3 minutes)
-   - You'll see a progress bar
+2. **Close and reopen CMD** (important for Python to work):
+   - Type: `exit` and press `Enter`
+   - Open CMD again (see STEP 2)
 
-8. **When done**, click **"Close"**
-
-### Verify Python is Installed:
-
-1. **Press `Windows Key + R`** (a small box will open)
-
-2. **Type**: `cmd` and press **Enter**
-   - A black window will open (this is Command Prompt)
-
-3. **Type this command** (copy and paste):
+3. **Verify Python is installed**:
    ```
    python --version
    ```
-   - Press **Enter**
+   - Press `Enter`
+   - You should see: `Python 3.11.x`
 
-4. **What you should see**:
-   ```
-   Python 3.11.9
-   ```
-   (or similar version number starting with 3.11)
+**✅ If you see Python version = SUCCESS!**
 
-5. **If you see "Python 3.11.x"** = ✅ SUCCESS! Python is installed!
-
-6. **If you see "not recognized"** = ❌ ERROR! Go back and reinstall Python, make sure to check "Add Python to PATH"
-
-7. **Type**: `exit` and press Enter to close the black window
+**❌ If you see "not recognized":**
+- Restart your computer
+- Open CMD again
+- Try the verify command again
 
 ---
 
-## STEP 3: Install Node.js
+## STEP 4: Install Node.js Using CMD
 
-### What is Node.js?
-Node.js is needed to run the desktop application window.
+### Copy and paste this command:
 
-### Installation Steps:
+1. **In CMD, type**:
+   ```
+   winget install OpenJS.NodeJS.LTS
+   ```
+   - Press `Enter`
+   - Type: `Y` when asked to agree
+   - Wait 3-5 minutes for installation
+   - You'll see "Successfully installed"
 
-1. **Open your web browser**
+2. **Close and reopen CMD**:
+   - Type: `exit` and press `Enter`
+   - Open CMD again
 
-2. **Type this address**: `https://nodejs.org/`
-
-3. **You will see TWO green buttons**:
-   - One says "LTS" (Recommended)
-   - **Click the LTS button** (left side)
-   - A file will download (about 30MB)
-
-4. **Find the downloaded file** (in Downloads folder)
-   - File name looks like: `node-v20.x.x-x64.msi`
-
-5. **Double-click the file** to start installation
-
-6. **Click through the installer**:
-   - Click **"Next"**
-   - Click **"Next"** (accept license)
-   - Click **"Next"** (keep default location)
-   - Click **"Next"** (keep default features)
-   - Click **"Install"**
-   - If Windows asks permission, click **"Yes"**
-
-7. **Wait for installation** (takes 3-5 minutes)
-
-8. **When done**, click **"Finish"**
-
-### Verify Node.js is Installed:
-
-1. **Press `Windows Key + R`**
-
-2. **Type**: `cmd` and press **Enter**
-
-3. **Type this command**:
+3. **Verify Node.js is installed**:
    ```
    node --version
    ```
-   - Press **Enter**
+   - Press `Enter`
+   - You should see: `v20.x.x` or `v18.x.x`
 
-4. **What you should see**:
-   ```
-   v20.11.0
-   ```
-   (or similar version starting with v20 or v18)
-
-5. **Now type this command**:
+4. **Also verify npm**:
    ```
    npm --version
    ```
-   - Press **Enter**
+   - Press `Enter`
+   - You should see: `10.x.x` or similar
 
-6. **What you should see**:
-   ```
-   10.2.4
-   ```
-   (or similar version number)
-
-7. **If you see version numbers** = ✅ SUCCESS! Node.js is installed!
-
-8. **If you see "not recognized"** = ❌ ERROR! Restart your computer and try the verification again
-
-9. **Type**: `exit` and press Enter
+**✅ If you see both version numbers = SUCCESS!**
 
 ---
 
-## STEP 4: Install Ollama
+## STEP 5: Install Ollama Using CMD
 
-### What is Ollama?
-Ollama runs the AI models that power the intelligence features.
+### Copy and paste this command:
 
-### Installation Steps:
+1. **In CMD, type**:
+   ```
+   winget install Ollama.Ollama
+   ```
+   - Press `Enter`
+   - Type: `Y` when asked to agree
+   - Wait 2-3 minutes for installation
+   - You'll see "Successfully installed"
 
-1. **Open your web browser**
+2. **Close and reopen CMD**:
+   - Type: `exit` and press `Enter`
+   - Open CMD again
 
-2. **Type this address**: `https://ollama.com/download`
-
-3. **You will see a button** that says **"Download for Windows"**
-   - Click this button
-   - A file will download (about 500MB - this is large!)
-
-4. **Find the downloaded file** (in Downloads folder)
-   - File name looks like: `OllamaSetup.exe`
-
-5. **Double-click the file** to start installation
-
-6. **Follow the installer**:
-   - Click **"Install"**
-   - If Windows asks permission, click **"Yes"**
-   - Wait for installation (takes 2-3 minutes)
-
-7. **When done**, the installer will close automatically
-
-### Verify Ollama is Installed:
-
-1. **Press `Windows Key + R`**
-
-2. **Type**: `cmd` and press **Enter**
-
-3. **Type this command**:
+3. **Verify Ollama is installed**:
    ```
    ollama --version
    ```
-   - Press **Enter**
+   - Press `Enter`
+   - You should see: `ollama version 0.x.x`
 
-4. **What you should see**:
-   ```
-   ollama version 0.x.x
-   ```
-   (any version number)
-
-5. **If you see version number** = ✅ SUCCESS! Ollama is installed!
-
-6. **If you see "not recognized"** = ❌ ERROR! Restart your computer and try again
-
-7. **Type**: `exit` and press Enter
+**✅ If you see version number = SUCCESS!**
 
 ---
 
-## STEP 5: Run the Setup Script
+## STEP 6: Download AI Models Using CMD
 
-### This is the MAIN setup that installs everything!
+### These are the AI brains - this will take 10-30 minutes!
 
-1. **Open the folder** where you extracted Saransh Setu
-   - Example: `C:\Saransh-Setu\Saransh-Setu-App-main\`
-   - You should see `setup.bat` file here
+1. **Make sure CMD is open**
 
-2. **Find the file** named `setup.bat`
-   - It has a gear icon ⚙️
+2. **Download Llama3 model** (about 4.7GB):
+   ```
+   ollama pull llama3:8b
+   ```
+   - Press `Enter`
+   - You'll see a progress bar downloading
+   - **This takes 10-20 minutes** depending on internet speed
+   - Wait until you see "success"
 
-3. **Right-click on `setup.bat`**
+3. **Download Embedding model** (about 274MB):
+   ```
+   ollama pull nomic-embed-text
+   ```
+   - Press `Enter`
+   - You'll see a progress bar
+   - **This takes 2-5 minutes**
+   - Wait until you see "success"
 
-4. **Click "Run as administrator"**
-   - This is IMPORTANT to avoid errors!
+4. **Verify both models are downloaded**:
+   ```
+   ollama list
+   ```
+   - Press `Enter`
+   - You should see:
+   ```
+   NAME                    ID              SIZE
+   llama3:8b              xxxxx           4.7 GB
+   nomic-embed-text       xxxxx           274 MB
+   ```
 
-5. **If Windows shows a warning**:
-   - "Windows protected your PC"
-   - Click **"More info"**
-   - Click **"Run anyway"**
+**✅ If you see both models listed = SUCCESS!**
 
-6. **A black window will open** with orange and green text
-
-### What the Setup Does (Follow Along):
-
-**The setup will show you 10 steps:**
-
-#### Step 1: Checking Python
-- It checks if Python is installed
-- **If OK**: You'll see "Python is installed"
-- **If ERROR**: Go back to Step 2 and install Python
-- Press any key to continue
-
-#### Step 2: Checking Node.js
-- It checks if Node.js is installed
-- **If OK**: You'll see version numbers
-- **If ERROR**: Go back to Step 3 and install Node.js
-- Press any key to continue
-
-#### Step 3: Creating Virtual Environment
-- Creates a special Python folder
-- Takes 10-20 seconds
-- Press any key to continue
-
-#### Step 4: Installing Python Packages
-- **This takes 5-10 minutes!**
-- You'll see lots of text scrolling
-- **Don't close the window!**
-- When done, press any key to continue
-
-#### Step 5: Installing Electron
-- **This takes 2-3 minutes!**
-- You'll see "Installing Electron..."
-- When done, press any key to continue
-
-#### Step 6: Checking Ollama
-- Verifies Ollama is installed
-- Press any key to continue
-
-#### Step 7: Downloading AI Models
-- **⚠️ THIS IS THE LONGEST STEP!**
-- Downloads about 5GB of AI models
-- **Takes 10-30 minutes** depending on internet speed
-- You'll see two downloads:
-  1. Llama3 model (about 4.7GB)
-  2. Nomic Embed Text model (about 274MB)
-- **If download fails**:
-  - Setup will ask: "Do you want to retry? (Y/N)"
-  - Press **Y** to try again
-  - Press **N** to skip (you can download later)
-- Press any key to continue
-
-#### Step 8: Create Admin Account
-- **⚠️ VERY IMPORTANT!**
-- Setup will ask: **"Enter admin username:"**
-  - Type a username (example: `admin`)
-  - Press Enter
-- Setup will ask: **"Enter admin password:"**
-  - Type a password (example: `MyPassword123`)
-  - Press Enter
-- **✍️ WRITE THESE DOWN RIGHT NOW!**
-  - Username: _______________
-  - Password: _______________
-- Press any key to continue
-
-#### Step 9: Creating Desktop Shortcut
-- Creates a shortcut on your desktop
-- Press any key to continue
-
-#### Step 10: Final Verification
-- Shows commands to verify everything
-- Press any key to continue
-
-### Final Screen:
-- You'll see **"SETUP COMPLETE!"**
-- Shows your username (password is hidden)
-- Press any key to close
-
-**✅ SETUP IS DONE!**
+**❌ If download fails:**
+- Check your internet connection
+- Run the pull command again
+- It will resume from where it stopped
 
 ---
 
-## STEP 6: Verify Everything Works
+## STEP 7: Navigate to Project Folder in CMD
 
-Let's make sure everything installed correctly:
+### Go to where you extracted the project:
 
-1. **Press `Windows Key + R`**
+1. **In CMD, type this command** (adjust path if you extracted elsewhere):
+   ```
+   cd C:\Saransh-Setu\Saransh-Setu-App-main
+   ```
+   - Press `Enter`
+   - The path in CMD should change to show your project folder
 
-2. **Type**: `cmd` and press **Enter**
+2. **Verify you're in the right folder**:
+   ```
+   dir
+   ```
+   - Press `Enter`
+   - You should see: `backend`, `frontend`, `electron`, `setup.bat`
 
-3. **Copy and paste these commands one by one**:
+**✅ If you see these folders = You're in the right place!**
 
+---
+
+## STEP 8: Install Python Packages Using CMD
+
+### Install all required Python libraries:
+
+1. **Create a virtual environment**:
+   ```
+   python -m venv backend\venv
+   ```
+   - Press `Enter`
+   - Wait 10-20 seconds
+   - No output means success
+
+2. **Activate the virtual environment**:
+   ```
+   backend\venv\Scripts\activate
+   ```
+   - Press `Enter`
+   - You should see `(venv)` appear at the start of your CMD line
+
+3. **Install all Python packages** (this takes 5-10 minutes):
+   ```
+   pip install -r backend\requirements.txt
+   ```
+   - Press `Enter`
+   - You'll see lots of text scrolling
+   - **Wait patiently - don't close CMD!**
+   - When done, you'll see "Successfully installed..."
+
+**✅ If you see "Successfully installed" = SUCCESS!**
+
+---
+
+## STEP 9: Install Electron (Desktop App) Using CMD
+
+### Install Node.js packages:
+
+1. **Navigate to electron folder**:
+   ```
+   cd electron
+   ```
+   - Press `Enter`
+
+2. **Install Electron and dependencies** (takes 2-3 minutes):
+   ```
+   npm install
+   ```
+   - Press `Enter`
+   - You'll see progress bars
+   - Wait until you see "added XXX packages"
+
+3. **Go back to main folder**:
+   ```
+   cd ..
+   ```
+   - Press `Enter`
+
+**✅ If you see "added packages" = SUCCESS!**
+
+---
+
+## STEP 10: Create Admin Account Using CMD
+
+### Set up your login credentials:
+
+1. **Make sure you're in the main project folder**
+   - Your CMD should show: `C:\Saransh-Setu\Saransh-Setu-App-main`
+
+2. **Activate virtual environment** (if not already active):
+   ```
+   backend\venv\Scripts\activate
+   ```
+   - Press `Enter`
+
+3. **Run the database setup script**:
+   ```
+   python -c "from backend.database import init_db; init_db(); print('Database created!')"
+   ```
+   - Press `Enter`
+   - You should see: "Database created!"
+
+4. **Create your admin account**:
+   ```
+   python -c "from backend.database import create_user; import getpass; username = input('Enter username: '); password = getpass.getpass('Enter password: '); create_user(username, password); print(f'User {username} created successfully!')"
+   ```
+   - Press `Enter`
+   - It will ask: **"Enter username:"**
+     - Type your username (example: `admin`)
+     - Press `Enter`
+   - It will ask: **"Enter password:"**
+     - Type your password (you won't see it - this is normal)
+     - Press `Enter`
+   - You should see: "User admin created successfully!"
+
+**✍️ WRITE THESE DOWN RIGHT NOW:**
+- Username: _______________
+- Password: _______________
+
+**✅ If you see "created successfully" = SUCCESS!**
+
+---
+
+## STEP 11: Create Desktop Shortcut
+
+### Make it easy to start the app:
+
+1. **Right-click on your Desktop**
+2. **Click "New" → "Shortcut"**
+3. **In "Type the location", paste this** (adjust path if needed):
+   ```
+   C:\Saransh-Setu\Saransh-Setu-App-main\start.bat
+   ```
+4. **Click "Next"**
+5. **Name it**: `Saransh Setu`
+6. **Click "Finish"**
+
+**✅ You should see a "Saransh Setu" icon on your desktop!**
+
+---
+
+## STEP 12: Final Verification - Check Everything Works
+
+### Let's make sure all installations were successful:
+
+1. **Make sure CMD is still open**
+   - If you closed it, open CMD again (see STEP 2)
+
+2. **Copy and paste these commands one by one to verify**:
+
+**Check Python:**
 ```
 python --version
 ```
-**Should show**: `Python 3.11.x` ✅
+- Should show: `Python 3.11.x` ✅
 
+**Check Node.js:**
 ```
 node --version
 ```
-**Should show**: `v20.x.x` ✅
+- Should show: `v20.x.x` or `v18.x.x` ✅
 
+**Check npm:**
+```
+npm --version
+```
+- Should show: `10.x.x` ✅
+
+**Check Ollama:**
 ```
 ollama --version
 ```
-**Should show**: `ollama version 0.x.x` ✅
+- Should show: `ollama version 0.x.x` ✅
 
+**Check AI Models:**
 ```
 ollama list
 ```
-**Should show**:
+- Should show:
 ```
 NAME                    ID              SIZE
 llama3:8b              xxxxx           4.7 GB
 nomic-embed-text       xxxxx           274 MB
 ```
-✅ Both models should be listed!
+✅ Both models must be listed!
 
-4. **Type**: `exit` and press Enter
+**Check Python packages:**
+```
+cd C:\Saransh-Setu\Saransh-Setu-App-main
+backend\venv\Scripts\activate
+pip list
+```
+- Should show a long list of packages including: fastapi, uvicorn, chromadb, ollama, etc. ✅
 
-**If all checks pass** = 🎉 **PERFECT! You're ready to use Saransh Setu!**
+3. **Type**: `exit` and press Enter to close CMD
+
+**✅ If all checks pass = 🎉 PERFECT! Setup is 100% complete!**
+
+**❌ If any check fails:**
+- Go back to that specific step
+- Reinstall that component
+- Run the verification again
 
 ---
 
