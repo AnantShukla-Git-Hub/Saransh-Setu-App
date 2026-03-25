@@ -8,7 +8,15 @@ AI-powered intelligence assistant for Indian Government Officials. 100% offline,
 
 ## 📥 HOW TO DOWNLOAD THIS PROJECT
 
-### Follow These Steps to Download:
+### 🔽 CLICK HERE TO DOWNLOAD:
+
+**👉 [DOWNLOAD SARANSH SETU (Click Here)](https://github.com/AnantShukla-Git-Hub/Saransh-Setu-App/archive/refs/heads/main.zip) 👈**
+
+**The ZIP file will download automatically when you click the link above!**
+
+---
+
+### Alternative Method (If link doesn't work):
 
 1. **Scroll to the TOP of this GitHub page** (where you're reading this)
 
@@ -25,6 +33,10 @@ AI-powered intelligence assistant for Indian Government Officials. 100% offline,
    - It's at the bottom of the menu
    - The full project will download as a ZIP file
 
+---
+
+### After Download:
+
 5. **The file will download** to your Downloads folder
    - File name: `Saransh-Setu-App-main.zip`
    - Size: About 500KB (small!)
@@ -33,14 +45,6 @@ AI-powered intelligence assistant for Indian Government Officials. 100% offline,
    - Usually: `C:\Users\YourName\Downloads\`
 
 **✅ Once downloaded, go to STEP 1 below to extract and install!**
-
----
-
-### Alternative: If You Can't Find the Green Button
-
-1. **Copy this link**: `https://github.com/AnantShukla-Git-Hub/Saransh-Setu-App/archive/refs/heads/main.zip`
-2. **Paste it in your browser** address bar
-3. **Press Enter** - The ZIP file will download automatically
 
 ---
 
