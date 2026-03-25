@@ -1,0 +1,79 @@
+<div class="feature-header">
+    <h2>📅 Schedule Manager</h2>
+    <p>Manage your calendar and get AI-powered daily briefings</p>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>➕ Add Schedule</h3>
+        <form id="scheduleForm">
+            <div class="form-group">
+                <label>Event Title</label>
+                <input type="text" id="scheduleTitle" placeholder="e.g., District Collector Meeting" required>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="scheduleDescription" rows="3" placeholder="Details about the event..."></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Start Time</label>
+                    <input type="datetime-local" id="scheduleStart" required>
+                </div>
+                <div class="form-group">
+                    <label>End Time</label>
+                    <input type="datetime-local" id="scheduleEnd" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" id="scheduleLocation" placeholder="e.g., Collectorate, Block Office...">
+            </div>
+            <div class="form-group">
+                <label>Priority</label>
+                <select id="schedulePriority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success btn-full">📅 Add to Schedule</button>
+        </form>
+    </div>
+
+    <div class="feature-card">
+        <h3>📋 Upcoming Events</h3>
+        <div class="schedule-tabs">
+            <button class="schedule-tab active" onclick="showScheduleView('calendar')">📅 Calendar</button>
+            <button class="schedule-tab" onclick="showScheduleView('list')">📋 List View</button>
+        </div>
+        <div id="scheduleView">
+            <div class="empty-state">
+                <div class="empty-state-icon">📅</div>
+                <p>No schedule items yet</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.schedule-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.schedule-tab {
+    padding: 10px 20px;
+    border: 2px solid var(--border-color);
+    background: var(--bg-color);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.schedule-tab.active {
+    background: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+</style>
+
+<script src="js/schedule.js"></script>

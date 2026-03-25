@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.6s ease-out;
+}
+
+.tricolor-bar {
+    display: flex;
+    height: 6px;
+}
+
+.tricolor-bar .orange {
+    flex: 1;
+    background: #FF9933;
+}
+
+.tricolor-bar .green {
+    flex: 1;
+    background: #138808;
+}
+
+.logo-section {
+    text-align: center;
+    padding: 40px 40px 20px;
+}
+
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 20px rgba(30, 60, 114, 0.3);
+}
+
+.logo-icon {
+    font-size: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.logo-section h1 {
+    font-size: 32px;
+    color: #1e3c72;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+}
+
+.usb-status {
+    background: #e8f5e9;
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #2e7d32;
+}
+
+.status-indicator {
+    color: #4caf50;
+    font-size: 16px;
+}
+
+form {
+    padding: 30px 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1e3c72;
+    background: white;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 60, 114, 0.4);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    font-size: 18px;
+}
+
+.error-message {
+    margin: 0 40px 20px;
+    padding: 12px;
+    background: #ffebee;
+    border-left: 4px solid #f44336;
+    border-radius: 4px;
+    color: #c62828;
+    font-size: 14px;
+}
+
+.footer-note {
+    text-align: center;
+    padding: 20px 40px 30px;
+    color: #666;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.lock-icon {
+    font-size: 16px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

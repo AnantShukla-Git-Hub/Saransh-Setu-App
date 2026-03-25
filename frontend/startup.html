@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saransh Setu - Starting...</title>
+    <link rel="stylesheet" href="css/startup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <div class="logo">🏛️</div>
+            <h1>Saransh Setu</h1>
+            <p class="subtitle">सारांश सेतु - Bridge of Intelligence</p>
+        </div>
+
+        <div class="welcome-card">
+            <h2>🙏 Jai Hind! Welcome to Saransh Setu</h2>
+            <p>Your AI-powered intelligence assistant for informed leadership. All data stays on your device — fully private, fully secure.</p>
+            
+            <button id="startBtn" class="start-button">
+                <span class="btn-icon">▶</span> Start Application
+            </button>
+
+            <div id="statusSection" class="status-section" style="display: none;">
+                <div class="status-item">
+                    <span class="status-label">Ollama AI Engine:</span>
+                    <span id="ollamaStatus" class="status-value">⏳ Starting...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Backend Server:</span>
+                    <span id="backendStatus" class="status-value">⏳ Waiting...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Application:</span>
+                    <span id="appStatus" class="status-value">⏳ Loading...</span>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error-section" style="display: none;">
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🇮🇳 Made for Indian Government Officials | 100% Offline | 11 Indian Languages</p>
+        </div>
+    </div>
+
+    <script src="js/startup.js"></script>
+</body>
+</html>

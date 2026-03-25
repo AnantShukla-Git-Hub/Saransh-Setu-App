@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saransh Setu - Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="gov-banner">भारत सरकार | Government of India — Saransh Setu v1.0</div>
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-section">
+                    <span class="logo-icon">🏛️</span>
+                    <div class="logo-text">
+                        <div class="hindi-text">सारांश सेतु</div>
+                        <div class="english-text">Saransh Setu</div>
+                        <div class="tagline">Bridge of Intelligence - Vow of Service</div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">☀️</span> Dark
+                </button>
+                <div class="user-info">
+                    <span class="user-icon">👤</span>
+                    <div class="user-details">
+                        <div class="user-role">System Administrator</div>
+                        <div class="user-name" id="userName">Admin</div>
+                    </div>
+                </div>
+                <button class="logout-btn" id="logoutBtn">
+                    <span class="logout-icon">🚪</span> Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <a href="#dashboard" class="nav-item active">
+            <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="#documents" class="nav-item">
+            <span class="nav-icon">📄</span> Documents
+        </a>
+        <a href="#meetings" class="nav-item">
+            <span class="nav-icon">💼</span> Meetings
+        </a>
+        <a href="#speeches" class="nav-item">
+            <span class="nav-icon">🎤</span> Speeches
+        </a>
+        <a href="#schedule" class="nav-item">
+            <span class="nav-icon">📅</span> Schedule
+        </a>
+        <a href="#constituency" class="nav-item">
+            <span class="nav-icon">🏘️</span> Constituency
+        </a>
+        <a href="#ai-query" class="nav-item">
+            <span class="nav-icon">🤖</span> AI Query
+        </a>
+        <a href="#translate" class="nav-item">
+            <span class="nav-icon">🌐</span> Translate
+        </a>
+        <a href="#audit" class="nav-item">
+            <span class="nav-icon">📋</span> Audit Logs
+        </a>
+        <a href="#settings" class="nav-item">
+            <span class="nav-icon">⚙️</span> Settings
+        </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div id="dashboardPage" class="page-content active">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <h1>🙏 Jai Hind! Welcome to Saransh Setu</h1>
+                    <p>Your AI-powered intelligence assistant for informed leadership. All data stays on your device — fully private, fully secure.</p>
+                    <div class="datetime" id="currentDateTime">📅 Tuesday, 10 March 2026 - 7:52:58 pm</div>
+                    <div class="action-buttons">
+                        <button class="action-btn primary" onclick="document.querySelector('[href=\\'#ai-query\\']').click()">
+                            <span>🤖</span> Ask AI Assistant
+                        </button>
+                        <button class="action-btn success" onclick="document.querySelector('[href=\\'#documents\\']').click()">
+                            <span>📄</span> Upload Document
+                        </button>
+                        <button class="action-btn info" onclick="document.querySelector('[href=\\'#schedule\\']').click()">
+                            <span>📅</span> View Schedule
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card orange">
+                    <div class="stat-icon">📄</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="docCount">0</div>
+                        <div class="stat-label">Documents</div>
+                    </div>
+                </div>
+                <div class="stat-card blue">
+                    <div class="stat-icon">💼</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="meetingCount">0</div>
+                        <div class="stat-label">Meetings</div>
+                    </div>
+                </div>
+                <div class="stat-card green">
+                    <div class="stat-icon">🏘️</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="issueCount">0</div>
+                        <div class="stat-label">Issues Tracked</div>
+                    </div>
+                </div>
+                <div class="stat-card yellow">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="scheduleCount">0</div>
+                        <div class="stat-label">Schedules</div>
+                    </div>
+                </div>
+                <div class="stat-card purple">
+                    <div class="stat-icon">🎤</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="speechCount">0</div>
+                        <div class="stat-label">Speeches</div>
+                    </div>
+                </div>
+                <div class="stat-card teal">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="auditCount">0</div>
+                        <div class="stat-label">Audit Logs</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section-title">⚡ Quick Actions</div>
+            <div class="quick-actions">
+                <div class="quick-action-card" onclick="document.querySelector('[href=\\'#documents\\']').click()">
+                    <div class="qa-icon">📄</div>
+                    <div class="qa-label">Upload Document</div>
+                </div>
+                <div class="quick-action-card" onclick="document.querySelector('[href=\\'#meetings\\']').click()">
+                    <div class="qa-icon">📝</div>
+                    <div class="qa-label">Log Meeting</div>
+                </div>
+                <div class="quick-action-card" onclick="document.querySelector('[href=\\'#speeches\\']').click()">
+                    <div class="qa-icon">✍️</div>
+                    <div class="qa-label">Draft Speech</div>
+                </div>
+                <div class="quick-action-card" onclick="document.querySelector('[href=\\'#schedule\\']').click()">
+                    <div class="qa-icon">📅</div>
+                    <div class="qa-label">Add Schedule</div>
+                </div>
+                <div class="quick-action-card" onclick="document.querySelector('[href=\\'#constituency\\']').click()">
+                    <div class="qa-icon">🏘️</div>
+                    <div class="qa-label">Track Issue</div>
+                </div>
+                <div class="quick-action-card" onclick="document.querySelector('[href=\\'#translate\\']').click()">
+                    <div class="qa-icon">🌐</div>
+                    <div class="qa-label">Translate Text</div>
+                </div>
+                <div class="quick-action-card" onclick="document.querySelector('[href=\\'#ai-query\\']').click()">
+                    <div class="qa-icon">🤖</div>
+                    <div class="qa-label">AI Query</div>
+                </div>
+                <div class="quick-action-card" onclick="document.querySelector('[href=\\'#audit\\']').click()">
+                    <div class="qa-icon">📋</div>
+                    <div class="qa-label">View Audit Logs</div>
+                </div>
+            </div>
+
+            <!-- Recent Activity & Briefing -->
+            <div class="bottom-grid">
+                <div class="activity-section">
+                    <div class="section-title">📌 Recent Activity</div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">✅</div>
+                            <div class="activity-details">
+                                <div class="activity-text">System started successfully</div>
+                                <div class="activity-time">Just now</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">👤</div>
+                            <div class="activity-details">
+                                <div class="activity-text">Admin logged in</div>
+                                <div class="activity-time">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="briefing-section">
+                    <div class="section-title">💡 Today's AI Briefing</div>
+                    <div class="briefing-card">
+                        <p>Click "Generate Briefing" to get your AI-powered morning briefing</p>
+                        <button class="briefing-btn">
+                            ✨ Generate Briefing
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other pages will be loaded dynamically -->
+        <div id="documentsPage" class="page-content"></div>
+        <div id="ai-queryPage" class="page-content"></div>
+        <div id="translatePage" class="page-content"></div>
+        <div id="meetingsPage" class="page-content"></div>
+        <div id="speechesPage" class="page-content"></div>
+        <div id="schedulePage" class="page-content"></div>
+        <div id="constituencyPage" class="page-content"></div>
+        <div id="auditPage" class="page-content"></div>
+        <div id="settingsPage" class="page-content"></div>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<div class="feature-header">
+    <h2>💼 Meeting Summarizer</h2>
+    <p>Paste transcripts and get AI-generated summaries + action items</p>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>📝 Log New Meeting</h3>
+        <form id="meetingForm">
+            <div class="form-group">
+                <label>Meeting Title</label>
+                <input type="text" id="meetingTitle" placeholder="e.g., District Development Review" required>
+            </div>
+            <div class="form-group">
+                <label>Date & Time</label>
+                <input type="datetime-local" id="meetingDate" required>
+            </div>
+            <div class="form-group">
+                <label>Participants</label>
+                <input type="text" id="meetingParticipants" placeholder="DM, SDO, Block Officers..." required>
+            </div>
+            <div class="form-group">
+                <label>Language</label>
+                <select id="meetingLanguage">
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Meeting Transcript / Notes</label>
+                <textarea id="meetingNotes" rows="8" placeholder="Paste the full meeting transcript or detailed notes here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">📝 Summarize Meeting</button>
+        </form>
+        <div id="meetingProgress" style="display: none; margin-top: 20px;">
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <p class="progress-text">Analyzing meeting...</p>
+        </div>
+    </div>
+
+    <div class="feature-card">
+        <h3>📋 Past Meetings</h3>
+        <button class="btn btn-primary" onclick="refreshMeetings()" style="margin-bottom: 16px;">🔄 Refresh</button>
+        <div id="meetingsList">
+            <div class="empty-state">
+                <div class="empty-state-icon">💼</div>
+                <p>No meetings logged yet</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="meetingModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeMeetingModal()">&times;</span>
+        <h2 id="modalMeetingTitle"></h2>
+        <div id="modalMeetingSummary" style="margin-top: 20px;"></div>
+        <div id="modalActionItems" style="margin-top: 20px;"></div>
+    </div>
+</div>
+
+<script src="js/meetings.js"></script>

@@ -1,0 +1,156 @@
+<div class="feature-header">
+    <h2>🤖 AI Query Assistant</h2>
+    <p>Ask anything - powered by Ollama + your local knowledge base</p>
+</div>
+
+<div class="info-box">
+    💡 All queries are processed locally using Ollama. No data leaves your device.
+</div>
+
+<div class="query-container">
+    <div class="query-input-section">
+        <h3>❓ Your Question</h3>
+        <form id="queryForm">
+            <div class="form-group">
+                <label>Ask anything...</label>
+                <textarea id="queryQuestion" rows="6" placeholder="e.g., What are the pending water supply issues? Summarize last week's meetings. What schemes are available for farmers?" required></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Search Context</label>
+                    <select id="searchContext">
+                        <option value="All Documents + Meetings + Constituency">All Documents + Meetings + Constituency</option>
+                        <option value="Documents Only">Documents Only</option>
+                        <option value="Meetings Only">Meetings Only</option>
+                        <option value="Constituency Only">Constituency Only</option>
+                        <option value="General Knowledge">General Knowledge</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Response Language</label>
+                    <select id="responseLanguage">
+                        <option value="English">English</option>
+                        <option value="Hindi">Hindi (हिंदी)</option>
+                        <option value="Bengali">Bengali (বাংলা)</option>
+                        <option value="Tamil">Tamil (தமிழ்)</option>
+                        <option value="Telugu">Telugu (తెలుగు)</option>
+                        <option value="Marathi">Marathi (मराठी)</option>
+                        <option value="Gujarati">Gujarati (ગુજરાતી)</option>
+                        <option value="Kannada">Kannada (ಕನ್ನಡ)</option>
+                        <option value="Malayalam">Malayalam (മലയാളം)</option>
+                        <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
+                        <option value="Odia">Odia (ଓଡ଼ିଆ)</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+                🤖 Ask AI
+            </button>
+        </form>
+
+        <div id="queryProgress" style="display: none; margin-top: 20px;">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">AI is thinking...</p>
+        </div>
+    </div>
+
+    <div class="query-response-section">
+        <h3>💬 AI Response</h3>
+        <div id="queryResponse" class="response-box">
+            <div class="empty-state">
+                <div class="empty-state-icon">🤖</div>
+                <p>Ask a question to get started</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="suggested-queries">
+    <h3>💡 Suggested Queries</h3>
+    <div class="query-chips">
+        <button class="query-chip" onclick="askSuggested('What are the critical issues in my constituency?')">Critical Issues</button>
+        <button class="query-chip" onclick="askSuggested('Summarize action items from recent meetings')">Meeting Actions</button>
+        <button class="query-chip" onclick="askSuggested('What documents were uploaded this week?')">Recent Documents</button>
+        <button class="query-chip" onclick="askSuggested('Show status report of all issues')">Status Report</button>
+        <button class="query-chip" onclick="askSuggested('What are my upcoming schedules?')">Water Issues</button>
+        <button class="query-chip" onclick="askSuggested('Explain the latest policy document')">High Priority</button>
+    </div>
+</div>
+
+<style>
+.query-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.query-input-section, .query-response-section {
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.response-box {
+    min-height: 300px;
+    padding: 20px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border: 2px solid var(--border-color);
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.suggested-queries {
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.query-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.query-chip {
+    padding: 10px 20px;
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.query-chip:hover {
+    border-color: var(--primary-blue);
+    background: var(--primary-blue);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .query-container {
+        grid-template-columns: 1fr;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script src="js/ai-query.js"></script>

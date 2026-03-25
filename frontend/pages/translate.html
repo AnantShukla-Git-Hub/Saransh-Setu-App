@@ -1,0 +1,201 @@
+<div class="feature-header">
+    <h2>🌐 Language Translation</h2>
+    <p>Translate between 11 Indian languages - fully offline via Ollama</p>
+</div>
+
+<div class="info-box">
+    🔒 All translations use local Ollama AI. No internet required. Your data never leaves the device.
+</div>
+
+<div class="translate-container">
+    <div class="translate-panel">
+        <h3>📝 Translate Text</h3>
+        <form id="translateForm">
+            <div class="form-group">
+                <label>From Language</label>
+                <select id="fromLanguage">
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi (हिंदी)</option>
+                    <option value="Bengali">Bengali (বাংলা)</option>
+                    <option value="Tamil">Tamil (தமிழ்)</option>
+                    <option value="Telugu">Telugu (తెలుగు)</option>
+                    <option value="Marathi">Marathi (मराठी)</option>
+                    <option value="Gujarati">Gujarati (ગુજરાતી)</option>
+                    <option value="Kannada">Kannada (ಕನ್ನಡ)</option>
+                    <option value="Malayalam">Malayalam (മലയാളം)</option>
+                    <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
+                    <option value="Odia">Odia (ଓଡ଼ିଆ)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>To Language</label>
+                <select id="toLanguage">
+                    <option value="Hindi">Hindi (हिंदी)</option>
+                    <option value="English">English</option>
+                    <option value="Bengali">Bengali (বাংলা)</option>
+                    <option value="Tamil">Tamil (தமிழ்)</option>
+                    <option value="Telugu">Telugu (తెలుగు)</option>
+                    <option value="Marathi">Marathi (मराठी)</option>
+                    <option value="Gujarati">Gujarati (ગુજરાતી)</option>
+                    <option value="Kannada">Kannada (ಕನ್ನಡ)</option>
+                    <option value="Malayalam">Malayalam (മലയാളം)</option>
+                    <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
+                    <option value="Odia">Odia (ଓଡ଼ିଆ)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Text to Translate</label>
+                <textarea id="sourceText" rows="8" placeholder="Enter text to translate..." required></textarea>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-primary">
+                    🌐 Translate
+                </button>
+                <button type="button" class="btn btn-success" onclick="detectLanguage()">
+                    🔍 Detect Language
+                </button>
+            </div>
+        </form>
+
+        <div id="translateProgress" style="display: none; margin-top: 20px;">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">Translating...</p>
+        </div>
+
+        <div id="translationResult" class="translation-output" style="display: none;">
+            <h4>Translation:</h4>
+            <div id="translatedText"></div>
+        </div>
+    </div>
+
+    <div class="languages-panel">
+        <h3>🌍 Supported Languages</h3>
+        <div class="language-list">
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Hindi - हिंदी</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Bengali - বাংলা</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Tamil - தமிழ்</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Telugu - తెలుగు</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Marathi - मराठी</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Gujarati - ગુજરાતી</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Kannada - ಕನ್ನಡ</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Malayalam - മലയാളം</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Punjabi - ਪੰਜਾਬੀ</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇮🇳</span>
+                <span class="lang-name">Odia - ଓଡ଼ିଆ</span>
+            </div>
+            <div class="language-item">
+                <span class="lang-flag">🇬🇧</span>
+                <span class="lang-name">English</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.translate-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+}
+
+.translate-panel, .languages-panel {
+    background: var(--card-bg);
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.button-group .btn {
+    flex: 1;
+}
+
+.translation-output {
+    margin-top: 24px;
+    padding: 20px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border-left: 4px solid #4caf50;
+}
+
+.translation-output h4 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+#translatedText {
+    line-height: 1.8;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+}
+
+.language-list {
+    margin-top: 16px;
+}
+
+.language-item {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.language-item:last-child {
+    border-bottom: none;
+}
+
+.lang-flag {
+    font-size: 24px;
+}
+
+.lang-name {
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .translate-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script src="js/translate.js"></script>

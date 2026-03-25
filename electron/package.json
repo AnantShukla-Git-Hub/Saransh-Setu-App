@@ -1,0 +1,26 @@
+{
+  "name": "saransh-setu",
+  "version": "1.0.0",
+  "description": "AI Co-Pilot for Indian Government Officials",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Saransh Setu Team",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^28.1.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.saranshsetu.app",
+    "productName": "Saransh Setu",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    }
+  }
+}

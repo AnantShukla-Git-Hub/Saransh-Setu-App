@@ -1,0 +1,100 @@
+<div class="feature-header">
+    <h2>⚙️ Settings & Security</h2>
+    <p>Manage users, USB key, and emergency kill switch</p>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <div class="coming-soon-badge">🔜 COMING SOON</div>
+        <h3>🔐 USB Security Key</h3>
+        <p class="info-text">Hardware security key authentication for maximum privacy</p>
+        <div class="status-box">
+            <strong>Status:</strong> <span style="color: #ff9933;">DEV MODE - Disabled</span>
+        </div>
+        <p style="margin: 16px 0; font-size: 13px; color: var(--text-secondary);">
+            To enable, you will need to configure a USB security key. Only admin can set this up.
+        </p>
+        <button class="btn btn-primary" disabled>🔍 Check USB Status</button>
+    </div>
+
+    <div class="feature-card">
+        <div class="coming-soon-badge">🔜 COMING SOON</div>
+        <h3>🚨 Emergency Kill Switch</h3>
+        <p class="info-text">Instantly lock the entire system. Only admin can reactivate.</p>
+        <div class="status-box">
+            <strong>Status:</strong> <span style="color: #4caf50;">Inactive</span>
+        </div>
+        <div class="form-group" style="margin-top: 16px;">
+            <label>Reason for Activation</label>
+            <input type="text" placeholder="e.g., Security breach suspected..." disabled>
+        </div>
+        <div style="display: flex; gap: 12px; margin-top: 16px;">
+            <button class="btn btn-danger" disabled>🔴 ACTIVATE KILL SWITCH</button>
+            <button class="btn btn-success" disabled>🔓 Deactivate</button>
+        </div>
+    </div>
+</div>
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <div class="coming-soon-badge">🔜 COMING SOON</div>
+        <h3>👥 Create New User</h3>
+        <form id="createUserForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="e.g., Priya Sharma" disabled>
+            </div>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" placeholder="e.g., priya.sharma" disabled>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" placeholder="Strong password..." disabled>
+            </div>
+            <div class="form-group">
+                <label>Role</label>
+                <select disabled>
+                    <option>Staff</option>
+                    <option>Admin</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" disabled>Create User</button>
+        </form>
+    </div>
+
+    <div class="feature-card">
+        <h3>👥 All Users</h3>
+        <button class="btn btn-primary" onclick="alert('User management coming soon!')" style="margin-bottom: 16px;">
+            🔄 Refresh
+        </button>
+        <div class="empty-state">
+            <div class="empty-state-icon">👥</div>
+            <p>Click button to load users</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.coming-soon-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, #ff9933, #ff6b35);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.feature-card {
+    position: relative;
+}
+.status-box {
+    padding: 12px;
+    background: var(--bg-color);
+    border-radius: 8px;
+    margin: 16px 0;
+    font-size: 14px;
+}
+</style>

@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# ChromaDB
+chroma_data/
+chromadb/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules
+node_modules/
+package-lock.json
+
+# Electron
+dist/
+build/
+out/
+
+# Sensitive data
+config/secrets.json
+*.key
+*.pem
+*.cert
+
+# User data
+uploads/
+temp/
+cache/
+
+# Kiro Internal Documentation (not for users)
+KIRO_SESSION_HANDOFF.md
+BUILD_COMPLETE.md
+DEVELOPMENT_STATUS.md
+WHATS_LEFT.md
+FINAL_CHECKLIST.md
+GITHUB_PUSH_GUIDE.md

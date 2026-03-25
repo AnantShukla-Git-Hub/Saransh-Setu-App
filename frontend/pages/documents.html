@@ -1,0 +1,188 @@
+<div class="feature-header">
+    <h2>📄 Document Summarizer</h2>
+    <p>Upload and AI-summarize government documents instantly</p>
+</div>
+
+<div class="feature-grid">
+    <!-- Upload Section -->
+    <div class="feature-card">
+        <h3>📤 Upload Document</h3>
+        <p class="info-text">Select File (PDF, DOCX, TXT)</p>
+        
+        <form id="documentUploadForm">
+            <div class="form-group">
+                <label>Select File</label>
+                <input type="file" id="documentFile" accept=".pdf,.docx,.txt" required>
+                <small>Maximum size: 25MB</small>
+            </div>
+
+            <div class="form-group">
+                <label>Language</label>
+                <select id="docLanguage">
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi (हिंदी)</option>
+                    <option value="Bengali">Bengali (বাংলা)</option>
+                    <option value="Tamil">Tamil (தமிழ்)</option>
+                    <option value="Telugu">Telugu (తెలుగు)</option>
+                    <option value="Marathi">Marathi (मराठी)</option>
+                    <option value="Gujarati">Gujarati (ગુજરાતી)</option>
+                    <option value="Kannada">Kannada (ಕನ್ನಡ)</option>
+                    <option value="Malayalam">Malayalam (മലയാളം)</option>
+                    <option value="Punjabi">Punjabi (ਪੰਜਾਬੀ)</option>
+                    <option value="Odia">Odia (ଓଡ଼ିଆ)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Summary Length</label>
+                <select id="summaryLength">
+                    <option value="Short">Short (1 paragraph)</option>
+                    <option value="Medium" selected>Medium (2-3 paragraphs)</option>
+                    <option value="Long">Long (detailed)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tags (comma separated)</label>
+                <input type="text" id="docTags" placeholder="policy, budget, health...">
+            </div>
+
+            <button type="submit" class="btn btn-warning btn-full">
+                📤 Upload & Summarize
+            </button>
+        </form>
+
+        <div id="uploadProgress" style="display: none; margin-top: 20px;">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">Processing document...</p>
+        </div>
+    </div>
+
+    <!-- Uploaded Documents -->
+    <div class="feature-card">
+        <h3>📋 Uploaded Documents</h3>
+        <button class="btn btn-primary" onclick="refreshDocuments()" style="margin-bottom: 16px;">
+            🔄 Refresh
+        </button>
+        
+        <div id="documentsList">
+            <div class="empty-state">
+                <div class="empty-state-icon">📄</div>
+                <p>No documents uploaded yet</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Document Detail Modal -->
+<div id="documentModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="modal-close" onclick="closeDocumentModal()">&times;</span>
+        <h2 id="modalDocTitle"></h2>
+        <div id="modalDocSummary" style="margin-top: 20px; line-height: 1.8;"></div>
+    </div>
+</div>
+
+<style>
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff9933, #ff6b35);
+    animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 8px;
+    color: var(--text-secondary);
+}
+
+.document-item {
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.document-item:hover {
+    border-color: var(--primary-blue);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.document-item h4 {
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.document-item p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.document-meta {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+.info-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+</style>
+
+<script src="js/documents.js"></script>
