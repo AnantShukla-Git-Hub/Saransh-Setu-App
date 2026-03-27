@@ -213,7 +213,7 @@ exit
 ```
 ollama --version
 ```
-**Should see**: `ollama version 0.5.4` ✅
+**Should see**: `ollama version X.X.X` (any version is fine) ✅
 
 **Check path:**
 ```
@@ -522,7 +522,7 @@ npm --version
 ```
 ollama --version
 ```
-✅ `ollama version 0.5.4`
+✅ `ollama version X.X.X` (any version)
 
 ```
 ollama list
