@@ -21,8 +21,8 @@ function createWindow() {
   mainWindow.maximize();
   mainWindow.loadFile(path.join(__dirname, '../backend/app.html'));
   
-  // Open DevTools for debugging
-  mainWindow.webContents.openDevTools();
+  // Open DevTools for debugging (comment out for production)
+  // mainWindow.webContents.openDevTools();
   
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();

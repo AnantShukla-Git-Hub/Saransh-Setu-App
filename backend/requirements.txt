@@ -13,3 +13,4 @@ langchain==0.1.4
 langchain-community==0.0.16
 requests==2.31.0
 psutil==5.9.8
+apscheduler==3.10.4

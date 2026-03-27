@@ -2,7 +2,7 @@ from fastapi import FastAPI, Depends, HTTPException, status, UploadFile, File, F
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Optional, List
 import os
 import shutil
@@ -17,6 +17,8 @@ from ollama_helper import (
 from chromadb_helper import add_document_to_vectordb, search_documents
 from document_processor import process_document
 import uuid
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.interval import IntervalTrigger
 
 load_dotenv()
 init_db()
@@ -30,6 +32,62 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Background scheduler for cleanup tasks
+scheduler = BackgroundScheduler()
+
+def cleanup_old_meetings():
+    """Delete meetings older than 7 days after their end date"""
+    try:
+        db = next(get_db())
+        cutoff_date = datetime.now() - timedelta(days=7)
+        
+        # Delete old meetings
+        deleted = db.query(Meeting).filter(Meeting.date < cutoff_date).delete()
+        db.commit()
+        
+        if deleted > 0:
+            print(f"Cleaned up {deleted} old meetings")
+    except Exception as e:
+        print(f"Cleanup error: {e}")
+    finally:
+        db.close()
+
+def cleanup_old_schedules():
+    """Delete schedules older than 30 days after their date"""
+    try:
+        db = next(get_db())
+        cutoff_date = datetime.now() - timedelta(days=30)
+        
+        # Delete old schedules
+        deleted = db.query(Schedule).filter(Schedule.date < cutoff_date).delete()
+        db.commit()
+        
+        if deleted > 0:
+            print(f"Cleaned up {deleted} old schedules")
+    except Exception as e:
+        print(f"Cleanup error: {e}")
+    finally:
+        db.close()
+
+# Schedule cleanup tasks
+scheduler.add_job(
+    func=cleanup_old_meetings,
+    trigger=IntervalTrigger(hours=24),  # Run daily
+    id='cleanup_meetings',
+    name='Clean up old meetings',
+    replace_existing=True
+)
+
+scheduler.add_job(
+    func=cleanup_old_schedules,
+    trigger=IntervalTrigger(hours=24),  # Run daily
+    id='cleanup_schedules',
+    name='Clean up old schedules',
+    replace_existing=True
+)
+
+scheduler.start()
 
 # Pydantic Models
 class Token(BaseModel):
@@ -457,3 +515,10 @@ async def get_audit_logs(
         "action": log.action,
         "details": log.details or ""
     } for log in logs]
+
+# Shutdown event
+@app.on_event("shutdown")
+def shutdown_event():
+    """Shutdown scheduler gracefully"""
+    scheduler.shutdown()
+    print("Scheduler shut down successfully")
