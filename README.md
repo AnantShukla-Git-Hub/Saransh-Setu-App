@@ -79,13 +79,20 @@ python --version
 ```
 **Should see**: `Python 3.11.9` ✅
 
+**⚠️ IMPORTANT: If you see Python 3.12, 3.13, or 3.14:**
+- These versions are TOO NEW
+- Packages are not compatible yet
+- You MUST uninstall and install Python 3.11.9
+- Go to: Settings → Apps → Python → Uninstall
+- Then run Step 4A and 4B again
+
 **Check path:**
 ```
 where python
 ```
 **Should see**: `C:\Users\...\Python\Python311\python.exe` ✅
 
-**✅ Both work? Python installed correctly!**
+**✅ Version is 3.11.9 and path shows Python311? Perfect!**
 
 ---
 
