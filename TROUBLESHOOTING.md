@@ -190,9 +190,32 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
+### Problem 9: "Smart App Control blocked" when opening shortcut
+
+**What this means**: Windows blocked the file because it was downloaded from internet
+
+**Solution**:
+1. Click "OK" to close the warning
+2. Right-click the "Saransh Setu" shortcut on Desktop
+3. Click "Properties"
+4. Go to "General" tab
+5. At the bottom, check the box: ☑ "Unblock"
+6. Click "Apply" → "OK"
+7. Now double-click the shortcut - should work!
+
+**Alternative - Disable Smart App Control** (if problem persists):
+1. Press `Windows Key`
+2. Type: "Windows Security"
+3. Click "App & browser control"
+4. Click "Smart App Control settings"
+5. Select "Off"
+6. Try the shortcut again
+
+---
+
 ## 🔴 APPLICATION WON'T START
 
-### Problem 9: Nothing happens when clicking shortcut
+### Problem 10: Nothing happens when clicking shortcut
 
 **Solution**:
 1. Check if Ollama is installed:
@@ -209,7 +232,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 10: "Ollama AI Engine: Failed"
+### Problem 11: "Ollama AI Engine: Failed"
 
 **Solution**:
 1. Start Ollama manually:
@@ -224,7 +247,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 11: "Backend Server: Failed"
+### Problem 24: "Backend Server: Failed"
 
 **Solution**:
 1. Check if port 8000 is already in use
@@ -244,7 +267,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ## 🔴 LOGIN PROBLEMS
 
-### Problem 12: Forgot Username or Password
+### Problem 24: Forgot Username or Password
 
 **Solution**:
 1. Open project folder (e.g., `C:\Saransh-Setu`)
@@ -257,7 +280,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 13: "Invalid username or password"
+### Problem 24: "Invalid username or password"
 
 **Solution**:
 1. Make sure Caps Lock is OFF
@@ -267,7 +290,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 14: Login page won't load
+### Problem 24: Login page won't load
 
 **Solution**:
 1. Wait 30 seconds after clicking START
@@ -281,7 +304,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ## 🔴 FEATURE PROBLEMS
 
-### Problem 15: Document upload fails
+### Problem 24: Document upload fails
 
 **Solution**:
 1. Check file size (should be under 50MB)
@@ -291,7 +314,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 16: AI Query not responding
+### Problem 24: AI Query not responding
 
 **Solution**:
 1. Check if Ollama is running:
@@ -310,7 +333,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 17: Translation not working
+### Problem 24: Translation not working
 
 **Solution**:
 1. Make sure Ollama is running
@@ -325,7 +348,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ## 🔴 PERFORMANCE PROBLEMS
 
-### Problem 18: Application is very slow
+### Problem 24: Application is very slow
 
 **Solution**:
 1. Check your RAM:
@@ -339,7 +362,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 19: AI responses take too long
+### Problem 24: AI responses take too long
 
 **What this means**: This is normal! AI processing takes time.
 
@@ -356,7 +379,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 20: Computer freezes when using AI
+### Problem 24: Computer freezes when using AI
 
 **Solution**:
 1. Your computer might not have enough RAM
@@ -368,7 +391,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ## 🔴 OTHER PROBLEMS
 
-### Problem 21: Can't find downloaded ZIP file
+### Problem 24: Can't find downloaded ZIP file
 
 **Solution**:
 1. Open File Explorer
@@ -378,7 +401,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 22: Antivirus blocking setup.bat
+### Problem 24: Antivirus blocking setup.bat
 
 **Solution**:
 1. Open your antivirus program
@@ -390,7 +413,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-### Problem 23: "Access Denied" errors
+### Problem 24: "Access Denied" errors
 
 **Solution**:
 1. Right-click on `setup.bat`
