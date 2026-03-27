@@ -397,10 +397,18 @@ async def create_schedule(
 ):
     """Create schedule event"""
     try:
+        # Parse datetime - handle both ISO format and datetime-local format
+        start_time_str = request.start_time.replace('T', ' ') if 'T' in request.start_time else request.start_time
+        try:
+            schedule_date = datetime.fromisoformat(request.start_time)
+        except:
+            # Fallback: try parsing as datetime-local format
+            schedule_date = datetime.strptime(start_time_str, '%Y-%m-%d %H:%M')
+        
         schedule = Schedule(
             title=request.title,
             description=request.description,
-            date=datetime.fromisoformat(request.start_time),
+            date=schedule_date,
             created_by=current_user.id
         )
         db.add(schedule)

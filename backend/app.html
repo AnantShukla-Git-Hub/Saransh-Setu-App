@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saransh Setu — Bridge of Intelligence, Vow of Service</title>
+<style>
+:root {
+  --saffron: #FF6B00;
+  --saffron-light: #FF8C38;
+  --saffron-dark: #E05A00;
+  --india-green: #138808;
+  --india-green-light: #1aad0a;
+  --navy: #003580;
+  --navy-light: #0047AB;
+  --ashoka-blue: #0057A8;
+  --gold: #F4C400;
+  --gold-light: #FFD700;
+  --white: #FFFFFF;
+  --off-white: #F8F6F0;
+  --light-bg: #F0F4FF;
+  --card-bg: #FFFFFF;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a6a;
+  --text-muted: #7a7a9a;
+  --border: #e0e4f0;
+  --shadow: 0 4px 24px rgba(0,53,128,0.10);
+  --shadow-lg: 0 8px 40px rgba(0,53,128,0.16);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --header-bg: #FFFFFF;
+  --sidebar-bg: #FFFFFF;
+  --input-bg: #FFFFFF;
+}
+[data-theme="dark"] {
+  --off-white: #0f1117;
+  --light-bg: #161b27;
+  --card-bg: #1e2436;
+  --text-primary: #e8eaf6;
+  --text-secondary: #b0b8d8;
+  --text-muted: #6c7a99;
+  --border: #2a3350;
+  --shadow: 0 4px 24px rgba(0,0,0,0.35);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.45);
+  --header-bg: #161b27;
+  --sidebar-bg: #161b27;
+  --input-bg: #1e2436;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Segoe UI','Arial','Noto Sans',sans-serif; background:var(--off-white); color:var(--text-primary); transition:background 0.3s,color 0.3s; min-height:100vh; }
+
+/* ── TOP STRIP ── */
+.top-strip {
+  background: linear-gradient(90deg, var(--navy) 0%, var(--ashoka-blue) 50%, var(--india-green) 100%);
+  color:#fff; font-size:12px; padding:5px 24px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.top-strip a { color:#FFD700; text-decoration:none; margin-left:16px; font-size:11px; }
+
+/* ── HEADER ── */
+header {
+  background: var(--header-bg);
+  border-bottom: 3px solid var(--saffron);
+  box-shadow: var(--shadow);
+  position:sticky; top:0; z-index:1000;
+  transition: background 0.3s;
+}
+.header-inner {
+  max-width:1400px; margin:0 auto;
+  padding:10px 24px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.logo-block { display:flex; align-items:center; gap:14px; }
+.emblem {
+  width:56px; height:56px;
+  background: linear-gradient(135deg,var(--navy),var(--ashoka-blue));
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-size:28px; color:#fff; font-weight:800; flex-shrink:0;
+  box-shadow:0 2px 12px rgba(0,53,128,0.3);
+}
+.logo-text h1 {
+  font-size:22px; font-weight:800; color:var(--saffron);
+  font-family:'Segoe UI','Arial',sans-serif;
+  line-height:1.1;
+}
+.logo-text .tagline { font-size:11px; color:var(--text-secondary); font-style:italic; margin-top:2px; }
+.logo-text .hindi { font-size:13px; color:var(--india-green); font-weight:600; }
+
+.header-right { display:flex; align-items:center; gap:12px; }
+
+/* Theme Toggle */
+.theme-toggle {
+  background: linear-gradient(135deg,var(--saffron),var(--gold));
+  border:none; border-radius:24px; padding:7px 14px;
+  cursor:pointer; font-size:14px; color:#fff;
+  font-weight:600; display:flex; align-items:center; gap:6px;
+  transition:all 0.2s; box-shadow:0 2px 8px rgba(255,107,0,0.3);
+}
+.theme-toggle:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(255,107,0,0.4); }
+
+/* User info */
+.user-pill {
+  background:var(--light-bg); border:1px solid var(--border);
+  border-radius:24px; padding:6px 14px;
+  display:flex; align-items:center; gap:8px; cursor:pointer;
+}
+.user-avatar {
+  width:30px; height:30px; border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--ashoka-blue));
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:13px; font-weight:700;
+}
+.user-name { font-size:13px; font-weight:600; color:var(--text-primary); }
+.user-role { font-size:10px; color:var(--saffron); font-weight:600; }
+
+/* ── NAV TABS ── */
+.nav-bar {
+  background: var(--navy);
+  padding:0 24px;
+}
+.nav-inner {
+  max-width:1400px; margin:0 auto;
+  display:flex; gap:0; overflow-x:auto;
+}
+.nav-tab {
+  color:#cdd8ff; font-size:13px; font-weight:500;
+  padding:13px 18px; cursor:pointer; border:none; background:none;
+  white-space:nowrap; display:flex; align-items:center; gap:7px;
+  border-bottom:3px solid transparent; transition:all 0.2s;
+}
+.nav-tab:hover { color:#fff; background:rgba(255,255,255,0.08); }
+.nav-tab.active { color:#FFD700; border-bottom-color:#FFD700; font-weight:700; }
+.nav-tab .icon { font-size:16px; }
+
+/* ── MAIN LAYOUT ── */
+.app-layout {
+  max-width:1400px; margin:0 auto;
+  padding:24px; min-height:calc(100vh - 180px);
+}
+
+/* ── PAGES ── */
+.page { display:none; animation:fadeIn 0.3s ease; }
+.page.active { display:block; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── SECTION TITLE ── */
+.section-title {
+  display:flex; align-items:center; gap:12px;
+  margin-bottom:24px;
+}
+.section-title .icon-box {
+  width:46px; height:46px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:22px;
+}
+.section-title h2 { font-size:22px; font-weight:700; color:var(--text-primary); }
+.section-title p { font-size:13px; color:var(--text-secondary); margin-top:2px; }
+
+/* ── CARDS ── */
+.card {
+  background:var(--card-bg); border-radius:var(--radius);
+  border:1px solid var(--border); box-shadow:var(--shadow);
+  padding:24px; transition:box-shadow 0.2s,transform 0.2s;
+}
+.card:hover { box-shadow:var(--shadow-lg); }
+
+/* ── STAT CARDS ── */
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin-bottom:24px; }
+.stat-card {
+  border-radius:var(--radius); padding:20px;
+  display:flex; align-items:center; gap:14px;
+  color:#fff; position:relative; overflow:hidden;
+}
+.stat-card::after {
+  content:''; position:absolute; right:-20px; top:-20px;
+  width:80px; height:80px; border-radius:50%;
+  background:rgba(255,255,255,0.1);
+}
+.stat-card .stat-icon { font-size:32px; }
+.stat-card .stat-val { font-size:26px; font-weight:800; line-height:1; }
+.stat-card .stat-label { font-size:12px; opacity:0.9; margin-top:4px; }
+.sc-saffron { background:linear-gradient(135deg,#FF6B00,#FF8C38); }
+.sc-blue    { background:linear-gradient(135deg,#003580,#0057A8); }
+.sc-green   { background:linear-gradient(135deg,#138808,#1aad0a); }
+.sc-gold    { background:linear-gradient(135deg,#c79400,#F4C400); }
+.sc-purple  { background:linear-gradient(135deg,#6c3db5,#9b59b6); }
+.sc-teal    { background:linear-gradient(135deg,#0b7a75,#0fb8b0); }
+
+/* ── GRID ── */
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+@media(max-width:900px){ .grid-2,.grid-3{grid-template-columns:1fr;} }
+
+/* ── FORMS ── */
+.form-group { margin-bottom:16px; }
+.form-label { font-size:13px; font-weight:600; color:var(--text-secondary); margin-bottom:6px; display:block; }
+.form-input, .form-select, .form-textarea {
+  width:100%; padding:11px 14px; font-size:14px;
+  border:1.5px solid var(--border); border-radius:var(--radius-sm);
+  background:var(--input-bg); color:var(--text-primary);
+  font-family:'Segoe UI','Arial',sans-serif;
+  transition:border-color 0.2s,box-shadow 0.2s;
+  outline:none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color:var(--ashoka-blue);
+  box-shadow:0 0 0 3px rgba(0,87,168,0.12);
+}
+.form-textarea { min-height:100px; resize:vertical; }
+
+/* ── BUTTONS ── */
+.btn {
+  padding:10px 22px; border-radius:var(--radius-sm);
+  font-weight:600; font-size:14px; cursor:pointer; border:none;
+  display:inline-flex; align-items:center; gap:8px;
+  transition:all 0.2s; font-family:'Poppins',sans-serif;
+}
+.btn-primary { background:linear-gradient(135deg,var(--navy),var(--ashoka-blue)); color:#fff; }
+.btn-primary:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(0,53,128,0.35); }
+.btn-saffron { background:linear-gradient(135deg,var(--saffron),var(--saffron-light)); color:#fff; }
+.btn-saffron:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(255,107,0,0.4); }
+.btn-green { background:linear-gradient(135deg,var(--india-green),var(--india-green-light)); color:#fff; }
+.btn-green:hover { transform:translateY(-1px); box-shadow:0 4px 16px rgba(19,136,8,0.35); }
+.btn-outline { background:transparent; border:1.5px solid var(--border); color:var(--text-primary); }
+.btn-outline:hover { border-color:var(--ashoka-blue); color:var(--ashoka-blue); }
+.btn-danger { background:linear-gradient(135deg,#c0392b,#e74c3c); color:#fff; }
+.btn-sm { padding:7px 14px; font-size:12px; }
+.btn-full { width:100%; justify-content:center; padding:13px; }
+
+/* ── BADGE ── */
+.badge {
+  display:inline-block; padding:3px 10px; border-radius:20px;
+  font-size:11px; font-weight:700; text-transform:uppercase;
+}
+.badge-open    { background:#fff3e0; color:#e65100; }
+.badge-progress{ background:#e3f2fd; color:#1565c0; }
+.badge-resolved{ background:#e8f5e9; color:#2e7d32; }
+.badge-critical{ background:#fce4ec; color:#c62828; }
+.badge-high    { background:#fff8e1; color:#f57f17; }
+.badge-medium  { background:#e8eaf6; color:#3949ab; }
+.badge-low     { background:#f1f8e9; color:#558b2f; }
+
+/* ── ALERT ── */
+.alert {
+  padding:12px 16px; border-radius:var(--radius-sm);
+  font-size:13px; margin-bottom:16px;
+  display:flex; align-items:center; gap:10px;
+}
+.alert-info  { background:#e3f2fd; color:#1565c0; border-left:4px solid #1565c0; }
+.alert-success{background:#e8f5e9; color:#2e7d32; border-left:4px solid #2e7d32; }
+.alert-error { background:#fce4ec; color:#c62828; border-left:4px solid #c62828; }
+
+/* ── TABLE ── */
+.table-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:13px; }
+th { background:var(--light-bg); color:var(--text-secondary); font-weight:700; padding:11px 14px; text-align:left; font-size:12px; text-transform:uppercase; letter-spacing:0.5px; }
+td { padding:11px 14px; border-bottom:1px solid var(--border); color:var(--text-primary); }
+tr:hover td { background:var(--light-bg); }
+
+/* ── LOGIN PAGE ── */
+#loginPage {
+  min-height:100vh; display:flex; flex-direction:column;
+  background:linear-gradient(135deg,#001a5c 0%,#003580 40%,#0057A8 70%,#138808 100%);
+  position:fixed; inset:0; z-index:9999;
+}
+.login-pattern {
+  position:absolute; inset:0; opacity:0.05;
+  background-image:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);
+  background-size:20px 20px;
+}
+.login-box {
+  background:#fff; border-radius:20px;
+  padding:44px 40px; width:440px; max-width:95vw;
+  box-shadow:0 24px 80px rgba(0,0,0,0.4);
+  position:relative; z-index:1;
+}
+.login-center { flex:1; display:flex; align-items:center; justify-content:center; }
+.login-emblem {
+  width:72px; height:72px; border-radius:50%; margin:0 auto 16px;
+  background:linear-gradient(135deg,var(--navy),var(--ashoka-blue));
+  display:flex; align-items:center; justify-content:center;
+  font-size:36px; color:#fff; box-shadow:0 8px 32px rgba(0,53,128,0.35);
+}
+.login-title { text-align:center; margin-bottom:28px; }
+.login-title h2 { font-size:24px; font-weight:800; color:var(--navy); }
+.login-title p  { font-size:12px; color:#888; margin-top:4px; }
+.tricolor-bar {
+  height:4px; border-radius:4px; margin-bottom:28px;
+  background:linear-gradient(90deg,var(--saffron) 33%,#fff 33%,#fff 66%,var(--india-green) 66%);
+}
+.usb-status {
+  display:flex; align-items:center; gap:8px;
+  background:#f0fff4; border:1px solid #b7e4c7;
+  border-radius:8px; padding:10px 14px; margin-bottom:16px; font-size:13px;
+}
+.usb-dot { width:10px; height:10px; border-radius:50%; background:#2e7d32; animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.3)} }
+
+/* ── DASHBOARD HERO ── */
+.hero-banner {
+  background:linear-gradient(135deg,var(--navy) 0%,var(--ashoka-blue) 60%,#0077cc 100%);
+  border-radius:var(--radius); padding:28px 32px; color:#fff;
+  margin-bottom:24px; position:relative; overflow:hidden;
+}
+.hero-banner::before {
+  content:''; position:absolute; right:-40px; top:-40px;
+  width:200px; height:200px; border-radius:50%;
+  background:rgba(255,255,255,0.07);
+}
+.hero-banner::after {
+  content:''; position:absolute; right:60px; bottom:-60px;
+  width:150px; height:150px; border-radius:50%;
+  background:rgba(255,165,0,0.12);
+}
+.hero-banner h2 { font-size:24px; font-weight:800; margin-bottom:6px; }
+.hero-banner p  { font-size:14px; opacity:0.85; max-width:540px; }
+.hero-time { font-size:13px; opacity:0.7; margin-top:10px; }
+.hero-cta { margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
+
+/* ── QUICK ACTION CARDS ── */
+.quick-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px; margin-bottom:28px; }
+.quick-card {
+  background:var(--card-bg); border:1px solid var(--border);
+  border-radius:var(--radius); padding:18px 14px; text-align:center;
+  cursor:pointer; transition:all 0.2s; box-shadow:var(--shadow);
+}
+.quick-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); border-color:var(--ashoka-blue); }
+.quick-card .qc-icon {
+  font-size:28px; margin-bottom:10px; display:block;
+  width:52px; height:52px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center; margin:0 auto 10px;
+}
+.quick-card .qc-label { font-size:12px; font-weight:600; color:var(--text-primary); }
+
+/* ── ACTIVITY FEED ── */
+.activity-item {
+  display:flex; align-items:flex-start; gap:12px;
+  padding:12px 0; border-bottom:1px solid var(--border);
+}
+.activity-item:last-child { border-bottom:none; }
+.activity-dot {
+  width:36px; height:36px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:16px;
+}
+.activity-item .act-title { font-size:13px; font-weight:600; color:var(--text-primary); }
+.activity-item .act-time  { font-size:11px; color:var(--text-muted); margin-top:2px; }
+
+/* ── TRICOLOR DIVIDER ── */
+.tricolor-div {
+  height:3px; border-radius:3px; margin:20px 0;
+  background:linear-gradient(90deg,var(--saffron) 33%,var(--gold) 33%,var(--gold) 66%,var(--india-green) 66%);
+}
+
+/* ── RESPONSE BOX ── */
+.response-box {
+  background:var(--light-bg); border-radius:var(--radius-sm);
+  border-left:4px solid var(--ashoka-blue); padding:16px;
+  font-size:14px; line-height:1.7; color:var(--text-primary);
+  white-space:pre-wrap; margin-top:16px; min-height:80px;
+}
+.loading-dots { display:inline-flex; gap:4px; }
+.loading-dots span {
+  width:8px; height:8px; border-radius:50%; background:var(--ashoka-blue);
+  animation:bounce 1.2s infinite;
+}
+.loading-dots span:nth-child(2){animation-delay:0.2s}
+.loading-dots span:nth-child(3){animation-delay:0.4s}
+@keyframes bounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
+
+/* ── LANGUAGE CHIPS ── */
+.lang-chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.lang-chip {
+  padding:6px 14px; border-radius:20px; font-size:12px; font-weight:600;
+  cursor:pointer; border:1.5px solid var(--border); color:var(--text-secondary);
+  background:var(--card-bg); transition:all 0.2s;
+}
+.lang-chip.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+.lang-chip:hover:not(.active) { border-color:var(--ashoka-blue); color:var(--ashoka-blue); }
+
+/* ── SCHEDULE TIMELINE ── */
+.timeline-item {
+  display:flex; gap:14px; padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+.timeline-time {
+  min-width:60px; font-size:12px; font-weight:700;
+  color:var(--ashoka-blue); text-align:right; padding-top:2px;
+}
+.timeline-dot {
+  width:12px; height:12px; border-radius:50%; flex-shrink:0; margin-top:4px;
+  border:2px solid var(--ashoka-blue); background:var(--card-bg);
+}
+.timeline-content .tl-title { font-size:14px; font-weight:600; }
+.timeline-content .tl-meta  { font-size:12px; color:var(--text-muted); margin-top:3px; }
+
+/* ── KILL SWITCH ── */
+.kill-switch-panel {
+  background:linear-gradient(135deg,#c0392b,#e74c3c);
+  border-radius:var(--radius); padding:28px; color:#fff; text-align:center;
+}
+.kill-switch-panel h3 { font-size:20px; font-weight:800; margin-bottom:8px; }
+.kill-switch-panel p  { font-size:14px; opacity:0.9; margin-bottom:20px; }
+
+/* ── USB PANEL ── */
+.usb-panel {
+  background:linear-gradient(135deg,#1a237e,#283593);
+  border-radius:var(--radius); padding:24px; color:#fff;
+}
+.usb-panel h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
+.usb-panel p  { font-size:13px; opacity:0.85; }
+
+/* ── TOAST ── */
+.toast-container { position:fixed; bottom:24px; right:24px; z-index:9998; display:flex; flex-direction:column; gap:8px; }
+.toast {
+  background:var(--card-bg); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:13px 18px;
+  box-shadow:var(--shadow-lg); font-size:13px; color:var(--text-primary);
+  display:flex; align-items:center; gap:10px;
+  animation:slideIn 0.3s ease; min-width:260px;
+}
+.toast.success { border-left:4px solid #2e7d32; }
+.toast.error   { border-left:4px solid #c62828; }
+.toast.info    { border-left:4px solid #1565c0; }
+@keyframes slideIn { from{transform:translateX(100%);opacity:0} to{transform:translateX(0);opacity:1} }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--navy); color:#cdd8ff;
+  text-align:center; padding:18px 24px; font-size:12px; margin-top:40px;
+}
+footer strong { color:#FFD700; }
+.footer-tricolor {
+  height:3px;
+  background:linear-gradient(90deg,var(--saffron) 33%,#fff 33%,#fff 66%,var(--india-green) 66%);
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width:6px; height:6px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:var(--border); border-radius:4px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .header-inner { flex-wrap:wrap; }
+  .logo-text h1 { font-size:17px; }
+  .nav-tab { padding:10px 12px; font-size:12px; }
+  .app-layout { padding:14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════ LOGIN ══════════════════════════ -->
+<div id="loginPage">
+  <div class="login-pattern"></div>
+  <div class="login-center">
+    <div class="login-box">
+      <div class="tricolor-bar"></div>
+      <div class="login-emblem">🏛️</div>
+      <div class="login-title">
+        <h2>Saransh Setu</h2>
+        <p>सारांश सेतु — Bridge of Intelligence, Vow of Service</p>
+      </div>
+      <div class="usb-status" id="usbStatus">
+        <div class="usb-dot"></div>
+        <span>USB Security Key: <strong>DEV MODE (Not Required)</strong></span>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Username</label>
+        <input class="form-input" id="loginUser" placeholder="Enter username"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input class="form-input" type="password" id="loginPass" placeholder="Enter password"/>
+      </div>
+      <div id="loginError" class="alert alert-error" style="display:none">❌ Invalid credentials</div>
+      <button class="btn btn-primary btn-full" onclick="doLogin()">🔐 Secure Login</button>
+      <p style="text-align:center;font-size:11px;color:#999;margin-top:16px;">🔒 All data processed locally. No internet required.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ APP ══════════════════════════ -->
+<div id="appShell" style="display:none">
+
+<!-- TOP STRIP -->
+<div class="top-strip">
+  <span>🇮🇳 भारत सरकार | Government of India — Saransh Setu v1.0</span>
+  <div>
+    <a href="#">Skip to Main Content</a>
+    <a href="#">Accessibility</a>
+    <a href="#">Screen Reader</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-block">
+      <div class="emblem">🏛️</div>
+      <div class="logo-text">
+        <div class="hindi">सारांश सेतु</div>
+        <h1>Saransh Setu</h1>
+        <div class="tagline">Bridge of Intelligence · Vow of Service</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙 Dark</button>
+      <div class="user-pill" onclick="showPage('settings')">
+        <div class="user-avatar" id="userAvatar">A</div>
+        <div>
+          <div class="user-name" id="userName">Administrator</div>
+          <div class="user-role" id="userRole">ADMIN</div>
+        </div>
+      </div>
+      <button class="btn btn-outline btn-sm" onclick="doLogout()">🚪 Logout</button>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<div class="nav-bar">
+  <div class="nav-inner">
+    <button class="nav-tab active" onclick="showPage('dashboard')" data-page="dashboard"><span class="icon">🏠</span> Dashboard</button>
+    <button class="nav-tab" onclick="showPage('documents')" data-page="documents"><span class="icon">📄</span> Documents</button>
+    <button class="nav-tab" onclick="showPage('meetings')" data-page="meetings"><span class="icon">🤝</span> Meetings</button>
+    <button class="nav-tab" onclick="showPage('speeches')" data-page="speeches"><span class="icon">🎤</span> Speeches</button>
+    <button class="nav-tab" onclick="showPage('schedule')" data-page="schedule"><span class="icon">📅</span> Schedule</button>
+    <button class="nav-tab" onclick="showPage('constituency')" data-page="constituency"><span class="icon">🏘️</span> Constituency</button>
+    <button class="nav-tab" onclick="showPage('query')" data-page="query"><span class="icon">🤖</span> AI Query</button>
+    <button class="nav-tab" onclick="showPage('translate')" data-page="translate"><span class="icon">🌐</span> Translate</button>
+    <button class="nav-tab" onclick="showPage('audit')" data-page="audit"><span class="icon">📋</span> Audit Logs</button>
+    <button class="nav-tab" onclick="showPage('settings')" data-page="settings"><span class="icon">⚙️</span> Settings</button>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="app-layout">
+
+<!-- ── DASHBOARD ── -->
+<div id="page-dashboard" class="page active">
+  <div class="hero-banner">
+    <h2>🙏 Jai Hind! Welcome to Saransh Setu</h2>
+    <p>Your AI-powered intelligence assistant for informed leadership. All data stays on your device — fully private, fully secure.</p>
+    <div class="hero-time" id="heroClock">Loading...</div>
+    <div class="hero-cta">
+      <button class="btn btn-saffron" onclick="showPage('query')">🤖 Ask AI Assistant</button>
+      <button class="btn btn-green"   onclick="showPage('documents')">📄 Upload Document</button>
+      <button class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4)" onclick="showPage('schedule')">📅 View Schedule</button>
+    </div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card sc-saffron"><span class="stat-icon">📄</span><div><div class="stat-val" id="statDocs">0</div><div class="stat-label">Documents</div></div></div>
+    <div class="stat-card sc-blue"   ><span class="stat-icon">🤝</span><div><div class="stat-val" id="statMeet">0</div><div class="stat-label">Meetings</div></div></div>
+    <div class="stat-card sc-green"  ><span class="stat-icon">🏘️</span><div><div class="stat-val" id="statIssues">0</div><div class="stat-label">Issues Tracked</div></div></div>
+    <div class="stat-card sc-gold"   ><span class="stat-icon">📅</span><div><div class="stat-val" id="statSched">0</div><div class="stat-label">Schedules</div></div></div>
+    <div class="stat-card sc-purple" ><span class="stat-icon">🎤</span><div><div class="stat-val" id="statSpeeches">0</div><div class="stat-label">Speeches</div></div></div>
+    <div class="stat-card sc-teal"   ><span class="stat-icon">🔐</span><div><div class="stat-val" id="statLogs">0</div><div class="stat-label">Audit Logs</div></div></div>
+  </div>
+
+  <div class="tricolor-div"></div>
+
+  <h3 style="font-size:16px;font-weight:700;margin-bottom:14px;color:var(--text-primary)">⚡ Quick Actions</h3>
+  <div class="quick-grid">
+    <div class="quick-card" onclick="showPage('documents')"><div class="qc-icon" style="background:#fff3e0">📤</div><div class="qc-label">Upload Document</div></div>
+    <div class="quick-card" onclick="showPage('meetings')"><div class="qc-icon" style="background:#e3f2fd">📝</div><div class="qc-label">Log Meeting</div></div>
+    <div class="quick-card" onclick="showPage('speeches')"><div class="qc-icon" style="background:#f3e5f5">🎤</div><div class="qc-label">Draft Speech</div></div>
+    <div class="quick-card" onclick="showPage('schedule')"><div class="qc-icon" style="background:#e8f5e9">📅</div><div class="qc-label">Add Schedule</div></div>
+    <div class="quick-card" onclick="showPage('constituency')"><div class="qc-icon" style="background:#fce4ec">🏘️</div><div class="qc-label">Track Issue</div></div>
+    <div class="quick-card" onclick="showPage('translate')"><div class="qc-icon" style="background:#e0f7fa">🌐</div><div class="qc-label">Translate Text</div></div>
+    <div class="quick-card" onclick="showPage('query')"><div class="qc-icon" style="background:#e8eaf6">🤖</div><div class="qc-label">AI Query</div></div>
+    <div class="quick-card" onclick="showPage('audit')"><div class="qc-icon" style="background:#f1f8e9">📋</div><div class="qc-label">View Audit Logs</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text-primary)">📋 Recent Activity</h3>
+      <div id="activityFeed">
+        <div class="activity-item">
+          <div class="activity-dot" style="background:#fff3e0">📄</div>
+          <div><div class="act-title">System started successfully</div><div class="act-time">Just now</div></div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-dot" style="background:#e3f2fd">🔐</div>
+          <div><div class="act-title">Admin logged in</div><div class="act-time">Just now</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text-primary)">🌤️ Today's AI Briefing</h3>
+      <div id="dashBriefing" class="response-box" style="min-height:120px">
+        Click "Generate Briefing" to get your AI-powered morning briefing.
+      </div>
+      <button class="btn btn-primary btn-full" style="margin-top:12px" onclick="loadBriefing()">✨ Generate Briefing</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── DOCUMENTS ── -->
+<div id="page-documents" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#fff3e0">📄</div>
+    <div><h2>Document Summarizer</h2><p>Upload and AI-summarize government documents instantly</p></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">📤 Upload Document</h3>
+      <div class="form-group">
+        <label class="form-label">Select File (PDF, DOCX, TXT)</label>
+        <input class="form-input" type="file" id="docFile" accept=".pdf,.docx,.doc,.txt"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Language</label>
+        <select class="form-select" id="docLang">
+          <option value="english">English</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+          <option value="telugu">Telugu</option>
+          <option value="bengali">Bengali</option>
+          <option value="marathi">Marathi</option>
+          <option value="gujarati">Gujarati</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Summary Length</label>
+        <select class="form-select" id="docSummaryLen">
+          <option value="short">Short (3-4 bullet points)</option>
+          <option value="medium" selected>Medium (1 paragraph)</option>
+          <option value="detailed">Detailed (3-4 paragraphs)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tags (comma separated)</label>
+        <input class="form-input" id="docTags" placeholder="policy, budget, health..."/>
+      </div>
+      <button class="btn btn-saffron btn-full" onclick="uploadDocument()">📤 Upload & Summarize</button>
+      <div id="docResult" class="response-box" style="display:none;margin-top:16px"></div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">📚 Uploaded Documents</h3>
+      <button class="btn btn-outline btn-sm" onclick="loadDocuments()" style="margin-bottom:12px">🔄 Refresh</button>
+      <div id="docsList">
+        <div class="alert alert-info">📄 No documents uploaded yet. Upload a document to get started.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MEETINGS ── -->
+<div id="page-meetings" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#e3f2fd">🤝</div>
+    <div><h2>Meeting Summarizer</h2><p>Paste transcripts and get AI-generated summaries and action items</p></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">📝 Log New Meeting</h3>
+      <div class="form-group">
+        <label class="form-label">Meeting Title</label>
+        <input class="form-input" id="meetTitle" placeholder="e.g. District Development Review"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Date & Time</label>
+        <input class="form-input" type="datetime-local" id="meetDate"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Participants</label>
+        <input class="form-input" id="meetParticipants" placeholder="DM, SP, CMO, Block Officers..."/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Language</label>
+        <select class="form-select" id="meetLang">
+          <option value="english">English</option>
+          <option value="hindi">Hindi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Meeting Transcript / Notes</label>
+        <textarea class="form-textarea" id="meetTranscript" rows="6" placeholder="Paste the full meeting transcript or detailed notes here..."></textarea>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="createMeeting()">🤖 Summarize Meeting</button>
+      <div id="meetResult" class="response-box" style="display:none;margin-top:16px"></div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">📋 Past Meetings</h3>
+      <button class="btn btn-outline btn-sm" onclick="loadMeetings()" style="margin-bottom:12px">🔄 Refresh</button>
+      <div id="meetingsList">
+        <div class="alert alert-info">🤝 No meetings logged yet.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SPEECHES ── -->
+<div id="page-speeches" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#f3e5f5">🎤</div>
+    <div><h2>Speech Generator</h2><p>AI-drafted speeches and official responses in any Indian language</p></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">✍️ Generate New Speech</h3>
+      <div class="form-group">
+        <label class="form-label">Speech Title</label>
+        <input class="form-input" id="speechTitle" placeholder="e.g. Independence Day Address"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Occasion</label>
+        <input class="form-input" id="speechOccasion" placeholder="e.g. Republic Day, Inauguration, Condolence..."/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Context / Background</label>
+        <textarea class="form-textarea" id="speechContext" rows="3" placeholder="Describe the event, audience and purpose..."></textarea>
+      </div>
+      <div class="grid-2" style="gap:12px">
+        <div class="form-group">
+          <label class="form-label">Tone</label>
+          <select class="form-select" id="speechTone">
+            <option value="formal">Formal</option>
+            <option value="motivational">Motivational</option>
+            <option value="empathetic">Empathetic</option>
+            <option value="informative">Informative</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Duration (minutes)</label>
+          <input class="form-input" type="number" id="speechDuration" value="5" min="1" max="60"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Language</label>
+        <div class="lang-chips" id="speechLangChips">
+          <div class="lang-chip active" onclick="selectLang(this,'speechLang')">English</div>
+          <div class="lang-chip" onclick="selectLang(this,'speechLang')">Hindi</div>
+          <div class="lang-chip" onclick="selectLang(this,'speechLang')">Tamil</div>
+          <div class="lang-chip" onclick="selectLang(this,'speechLang')">Telugu</div>
+          <div class="lang-chip" onclick="selectLang(this,'speechLang')">Bengali</div>
+          <div class="lang-chip" onclick="selectLang(this,'speechLang')">Marathi</div>
+        </div>
+        <input type="hidden" id="speechLang" value="english"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Key Points (one per line)</label>
+        <textarea class="form-textarea" id="speechKeyPoints" rows="3" placeholder="Infrastructure development&#10;Water supply improvement&#10;Women empowerment schemes"></textarea>
+      </div>
+      <button class="btn btn-saffron btn-full" onclick="generateSpeech()">🎤 Generate Speech</button>
+      <div id="speechResult" class="response-box" style="display:none;margin-top:16px"></div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">📚 Saved Speeches</h3>
+      <button class="btn btn-outline btn-sm" onclick="loadSpeeches()" style="margin-bottom:12px">🔄 Refresh</button>
+      <div id="speechesList">
+        <div class="alert alert-info">🎤 No speeches generated yet.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SCHEDULE ── -->
+<div id="page-schedule" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#e8f5e9">📅</div>
+    <div><h2>Schedule Manager</h2><p>Manage your calendar and get AI-powered daily briefings</p></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">➕ Add Schedule</h3>
+      <div class="form-group">
+        <label class="form-label">Event Title</label>
+        <input class="form-input" id="schedTitle" placeholder="e.g. District Collector Meeting"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea class="form-textarea" id="schedDesc" rows="2" placeholder="Details about the event..."></textarea>
+      </div>
+      <div class="grid-2" style="gap:12px">
+        <div class="form-group">
+          <label class="form-label">Start Time</label>
+          <input class="form-input" type="datetime-local" id="schedStart"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">End Time</label>
+          <input class="form-input" type="datetime-local" id="schedEnd"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Location</label>
+        <input class="form-input" id="schedLocation" placeholder="e.g. Collectorate, Block Office..."/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Priority</label>
+        <select class="form-select" id="schedPriority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+          <option value="critical">Critical</option>
+        </select>
+      </div>
+      <button class="btn btn-green btn-full" onclick="createSchedule()">📅 Add to Schedule</button>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">📆 Upcoming Events</h3>
+      <div style="display:flex;gap:8px;margin-bottom:12px">
+        <button class="btn btn-primary btn-sm" onclick="loadSchedule()">🔄 Refresh</button>
+        <button class="btn btn-saffron btn-sm" onclick="loadBriefing()">✨ AI Briefing</button>
+      </div>
+      <div id="schedBriefing" style="display:none" class="response-box" style="margin-bottom:12px"></div>
+      <div id="scheduleList">
+        <div class="alert alert-info">📅 No schedule items yet.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONSTITUENCY ── -->
+<div id="page-constituency" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#fce4ec">🏘️</div>
+    <div><h2>Constituency Tracker</h2><p>Track and manage community issues with AI-powered insights</p></div>
+  </div>
+  <div class="stat-grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px">
+    <div class="stat-card sc-saffron"><span class="stat-icon">🔴</span><div><div class="stat-val" id="cOpen">0</div><div class="stat-label">Open</div></div></div>
+    <div class="stat-card sc-blue"   ><span class="stat-icon">🔵</span><div><div class="stat-val" id="cProgress">0</div><div class="stat-label">In Progress</div></div></div>
+    <div class="stat-card sc-green"  ><span class="stat-icon">✅</span><div><div class="stat-val" id="cResolved">0</div><div class="stat-label">Resolved</div></div></div>
+    <div class="stat-card sc-gold"   ><span class="stat-icon">⚠️</span><div><div class="stat-val" id="cCritical">0</div><div class="stat-label">Critical</div></div></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">➕ Report New Issue</h3>
+      <div class="form-group">
+        <label class="form-label">Category</label>
+        <select class="form-select" id="constCategory">
+          <option value="water">💧 Water Supply</option>
+          <option value="roads">🛣️ Roads & Infrastructure</option>
+          <option value="health">🏥 Health</option>
+          <option value="education">🏫 Education</option>
+          <option value="electricity">⚡ Electricity</option>
+          <option value="sanitation">🧹 Sanitation</option>
+          <option value="agriculture">🌾 Agriculture</option>
+          <option value="security">🛡️ Security</option>
+          <option value="other">📌 Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Issue Title</label>
+        <input class="form-input" id="constTitle" placeholder="Brief title of the issue"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea class="form-textarea" id="constDesc" rows="3" placeholder="Detailed description..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Location</label>
+        <input class="form-input" id="constLocation" placeholder="Village / Ward / Block name"/>
+      </div>
+      <div class="grid-2" style="gap:12px">
+        <div class="form-group">
+          <label class="form-label">Priority</label>
+          <select class="form-select" id="constPriority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+            <option value="critical">Critical</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Reported By</label>
+          <input class="form-input" id="constReportedBy" placeholder="Name / Dept"/>
+        </div>
+      </div>
+      <button class="btn btn-saffron btn-full" onclick="addIssue()">📍 Report Issue</button>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">📊 Issues & Insights</h3>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <button class="btn btn-primary btn-sm" onclick="loadIssues()">🔄 Refresh</button>
+        <button class="btn btn-saffron btn-sm" onclick="loadInsights()">🤖 AI Insights</button>
+        <button class="btn btn-green btn-sm" onclick="loadReport()">📄 Status Report</button>
+      </div>
+      <div id="insightsBox" style="display:none" class="response-box" style="margin-bottom:12px;font-size:13px"></div>
+      <div id="issuesList">
+        <div class="alert alert-info">🏘️ No issues tracked yet.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── AI QUERY ── -->
+<div id="page-query" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#e8eaf6">🤖</div>
+    <div><h2>AI Query Assistant</h2><p>Ask anything — powered by Ollama + your local knowledge base</p></div>
+  </div>
+  <div class="card" style="margin-bottom:20px">
+    <div class="alert alert-info" style="margin-bottom:16px">🔒 All queries are processed locally using Ollama. No data leaves your device.</div>
+    <div class="form-group">
+      <label class="form-label">Your Question</label>
+      <textarea class="form-textarea" id="queryText" rows="4" placeholder="Ask anything — e.g. What are the pending water supply issues? Summarize last week's meetings. What schemes are available for farmers?"></textarea>
+    </div>
+    <div class="grid-2" style="gap:12px">
+      <div class="form-group">
+        <label class="form-label">Search Context</label>
+        <select class="form-select" id="queryContext">
+          <option value="all">All (Documents + Meetings + Constituency)</option>
+          <option value="documents">Documents Only</option>
+          <option value="meetings">Meetings Only</option>
+          <option value="constituency">Constituency Only</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Response Language</label>
+        <select class="form-select" id="queryLang">
+          <option value="english">English</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+          <option value="telugu">Telugu</option>
+          <option value="bengali">Bengali</option>
+          <option value="marathi">Marathi</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-full" onclick="askQuery()">🚀 Ask AI</button>
+    <div id="queryResult" class="response-box" style="display:none;margin-top:16px"></div>
+  </div>
+  <div class="card">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:14px">💡 Suggested Queries</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <button class="btn btn-outline btn-sm" onclick="setQuery('What are the most critical constituency issues?')">Critical Issues</button>
+      <button class="btn btn-outline btn-sm" onclick="setQuery('Summarize recent meeting action items')">Meeting Actions</button>
+      <button class="btn btn-outline btn-sm" onclick="setQuery('What documents were uploaded recently?')">Recent Documents</button>
+      <button class="btn btn-outline btn-sm" onclick="setQuery('Give me a status report of all open issues')">Status Report</button>
+      <button class="btn btn-outline btn-sm" onclick="setQuery('What are pending water supply issues?')">Water Issues</button>
+      <button class="btn btn-outline btn-sm" onclick="setQuery('List all high priority matters')">High Priority</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRANSLATE ── -->
+<div id="page-translate" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#e0f7fa">🌐</div>
+    <div><h2>Language Translation</h2><p>Translate between 11 Indian languages — fully offline via Ollama</p></div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">🔄 Translate Text</h3>
+      <div class="grid-2" style="gap:12px">
+        <div class="form-group">
+          <label class="form-label">From Language</label>
+          <select class="form-select" id="transFrom">
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="tamil">Tamil</option>
+            <option value="telugu">Telugu</option>
+            <option value="bengali">Bengali</option>
+            <option value="marathi">Marathi</option>
+            <option value="gujarati">Gujarati</option>
+            <option value="kannada">Kannada</option>
+            <option value="malayalam">Malayalam</option>
+            <option value="punjabi">Punjabi</option>
+            <option value="odia">Odia</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">To Language</label>
+          <select class="form-select" id="transTo">
+            <option value="hindi">Hindi</option>
+            <option value="english">English</option>
+            <option value="tamil">Tamil</option>
+            <option value="telugu">Telugu</option>
+            <option value="bengali">Bengali</option>
+            <option value="marathi">Marathi</option>
+            <option value="gujarati">Gujarati</option>
+            <option value="kannada">Kannada</option>
+            <option value="malayalam">Malayalam</option>
+            <option value="punjabi">Punjabi</option>
+            <option value="odia">Odia</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Text to Translate</label>
+        <textarea class="form-textarea" id="transText" rows="5" placeholder="Enter text to translate..."></textarea>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-primary" onclick="translateText()" style="flex:1">🌐 Translate</button>
+        <button class="btn btn-outline" onclick="detectLang()">🔍 Detect Language</button>
+      </div>
+      <div id="transResult" class="response-box" style="display:none;margin-top:16px"></div>
+    </div>
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">🌍 Supported Languages</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🇮🇳 Hindi — हिन्दी</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">📖 Bengali — বাংলা</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🎭 Tamil — தமிழ்</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🌺 Telugu — తెలుగు</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🏔️ Marathi — मराठी</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">💫 Gujarati — ગુજરાતી</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🌸 Kannada — ಕನ್ನಡ</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🌴 Malayalam — മലയാളം</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🌾 Punjabi — ਪੰਜਾਬੀ</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🏛️ Odia — ଓଡ଼ିଆ</div>
+        <div style="padding:10px;background:var(--light-bg);border-radius:8px;font-size:13px">🌐 English</div>
+      </div>
+      <div class="alert alert-info" style="margin-top:16px">
+        🔒 All translations use local Ollama AI. No internet required. Your data never leaves the device.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── AUDIT LOGS ── -->
+<div id="page-audit" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#f1f8e9">📋</div>
+    <div><h2>Audit Logs</h2><p>Complete trail of all actions for accountability and security</p></div>
+  </div>
+  <div class="card">
+    <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap;align-items:flex-end">
+      <div class="form-group" style="margin:0;flex:1;min-width:160px">
+        <label class="form-label">Filter by User</label>
+        <input class="form-input" id="auditUser" placeholder="Username..."/>
+      </div>
+      <div class="form-group" style="margin:0;flex:1;min-width:160px">
+        <label class="form-label">Filter by Action</label>
+        <select class="form-select" id="auditAction">
+          <option value="">All Actions</option>
+          <option value="LOGIN_SUCCESS">Login Success</option>
+          <option value="LOGIN_FAILED">Login Failed</option>
+          <option value="DOCUMENT_UPLOAD">Document Upload</option>
+          <option value="MEETING_CREATE">Meeting Create</option>
+          <option value="SPEECH_GENERATE">Speech Generate</option>
+          <option value="QUERY_ASKED">AI Query</option>
+          <option value="KILL_SWITCH_ACTIVATED">Kill Switch</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="loadAuditLogs()">🔍 Search Logs</button>
+    </div>
+    <div class="table-wrap">
+      <table id="auditTable">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>User</th>
+            <th>Action</th>
+            <th>Resource</th>
+            <th>IP Address</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="auditBody">
+          <tr><td colspan="6" style="text-align:center;padding:24px;color:var(--text-muted)">Click "Search Logs" to load audit logs</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ── SETTINGS ── -->
+<div id="page-settings" class="page">
+  <div class="section-title">
+    <div class="icon-box" style="background:#e8eaf6">⚙️</div>
+    <div><h2>Settings</h2><p>View your account information and app settings</p></div>
+  </div>
+  
+  <div class="grid-2">
+    <!-- User Info -->
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">👤 Your Account</h3>
+      <div style="padding:16px;background:var(--light-bg);border-radius:var(--radius-sm);margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div class="user-avatar" style="width:48px;height:48px;font-size:20px" id="settingsAvatar">A</div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:var(--text-primary)" id="settingsName">Administrator</div>
+            <div style="font-size:12px;color:var(--text-muted)" id="settingsUsername">@admin</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <span class="badge badge-resolved" id="settingsRole">ADMIN</span>
+          <span class="badge badge-resolved">Active</span>
+        </div>
+      </div>
+      <div style="font-size:13px;color:var(--text-secondary);line-height:1.6">
+        <p><strong>Account Type:</strong> Administrator</p>
+        <p><strong>Access Level:</strong> Full Access</p>
+        <p><strong>Status:</strong> Active</p>
+      </div>
+    </div>
+
+    <!-- App Info -->
+    <div class="card">
+      <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">ℹ️ Application Info</h3>
+      <div style="font-size:13px;color:var(--text-secondary);line-height:1.8">
+        <p><strong>App Name:</strong> Saransh Setu (सारांश सेतु)</p>
+        <p><strong>Version:</strong> 1.0.0</p>
+        <p><strong>Mode:</strong> 100% Offline</p>
+        <p><strong>AI Model:</strong> Llama 3 (8B)</p>
+        <p><strong>Embedding Model:</strong> Nomic Embed Text</p>
+        <p><strong>Database:</strong> SQLite + ChromaDB</p>
+        <p><strong>Languages:</strong> 11 Indian Languages</p>
+      </div>
+      <div style="margin-top:16px;padding:12px;background:var(--light-bg);border-radius:var(--radius-sm);font-size:12px;color:var(--text-secondary)">
+        🔒 All data is processed locally on your device. No internet connection required. Your data never leaves your computer.
+      </div>
+    </div>
+  </div>
+
+  <!-- System Status -->
+  <div class="card" style="margin-top:20px">
+    <h3 style="font-size:15px;font-weight:700;margin-bottom:16px">🖥️ System Status</h3>
+    <div class="grid-3">
+      <div style="text-align:center;padding:16px;background:var(--light-bg);border-radius:var(--radius-sm)">
+        <div style="font-size:24px;margin-bottom:8px">✅</div>
+        <div style="font-size:12px;font-weight:600;color:var(--text-primary)">Backend API</div>
+        <div style="font-size:11px;color:var(--india-green);margin-top:4px">Running</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:var(--light-bg);border-radius:var(--radius-sm)">
+        <div style="font-size:24px;margin-bottom:8px">✅</div>
+        <div style="font-size:12px;font-weight:600;color:var(--text-primary)">Ollama AI</div>
+        <div style="font-size:11px;color:var(--india-green);margin-top:4px">Running</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:var(--light-bg);border-radius:var(--radius-sm)">
+        <div style="font-size:24px;margin-bottom:8px">✅</div>
+        <div style="font-size:12px;font-weight:600;color:var(--text-primary)">Database</div>
+        <div style="font-size:11px;color:var(--india-green);margin-top:4px">Connected</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- app-layout -->
+
+<!-- FOOTER -->
+<div class="footer-tricolor"></div>
+<footer>
+  <strong>Saransh Setu</strong> — सारांश सेतु | Bridge of Intelligence, Vow of Service<br/>
+  <span style="opacity:0.7">AI Co-Pilot for Public Leaders & Administrators | 🔒 100% Local & Offline | Powered by Ollama + ChromaDB</span><br/>
+  <span style="opacity:0.5;font-size:10px">© 2024 | Built for Hackathon | All processing on-device — No data sent to any server</span>
+</footer>
+
+</div><!-- appShell -->
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+const API = 'http://localhost:8000';
+let TOKEN = '';
+let DARK = false;
+
+// ══════════════════════════════════════════════
+// AUTH
+// ══════════════════════════════════════════════
+async function doLogin() {
+  const u = document.getElementById('loginUser').value.trim();
+  const p = document.getElementById('loginPass').value.trim();
+  document.getElementById('loginError').style.display = 'none';
+  try {
+    const fd = new FormData();
+    fd.append('username', u);
+    fd.append('password', p);
+    const r = await fetch(`${API}/token`, {
+      method:'POST',
+      body: fd
+    });
+    if (!r.ok) throw new Error();
+    const d = await r.json();
+    TOKEN = d.access_token;
+    document.getElementById('userName').textContent = u;
+    document.getElementById('userRole').textContent = 'ADMIN';
+    document.getElementById('userAvatar').textContent = u[0].toUpperCase();
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('appShell').style.display = 'block';
+    updateClock();
+    setInterval(updateClock, 1000);
+    loadDashboardStats();
+    showToast('success', `🙏 Welcome, ${u}!`);
+  } catch(e) {
+    document.getElementById('loginError').style.display = 'flex';
+  }
+}
+function doLogout() {
+  TOKEN = '';
+  document.getElementById('loginPage').style.display = 'flex';
+  document.getElementById('appShell').style.display = 'none';
+}
+document.addEventListener('keydown', e => { if(e.key==='Enter' && document.getElementById('loginPage').style.display!=='none') doLogin(); });
+
+// ══════════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════════
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(`page-${name}`).classList.add('active');
+  document.querySelector(`[data-page="${name}"]`)?.classList.add('active');
+}
+
+// ══════════════════════════════════════════════
+// THEME
+// ══════════════════════════════════════════════
+function toggleTheme() {
+  DARK = !DARK;
+  document.documentElement.setAttribute('data-theme', DARK ? 'dark' : 'light');
+  document.getElementById('themeBtn').textContent = DARK ? '☀️ Light' : '🌙 Dark';
+}
+
+// ══════════════════════════════════════════════
+// CLOCK
+// ══════════════════════════════════════════════
+function updateClock() {
+  const now = new Date();
+  document.getElementById('heroClock').textContent =
+    `📅 ${now.toLocaleDateString('en-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'})} · ${now.toLocaleTimeString('en-IN')}`;
+}
+
+// ══════════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════════
+function showToast(type, msg) {
+  const tc = document.getElementById('toastContainer');
+  const t = document.createElement('div');
+  t.className = `toast ${type}`;
+  t.innerHTML = msg;
+  tc.appendChild(t);
+  setTimeout(() => t.remove(), 3500);
+}
+
+// ══════════════════════════════════════════════
+// API HELPER
+// ══════════════════════════════════════════════
+async function api(method, path, body=null, isForm=false) {
+  const opts = { method, headers: { 'Authorization': `Bearer ${TOKEN}` } };
+  if (body && isForm) { opts.body = body; }
+  else if (body) { opts.headers['Content-Type']='application/json'; opts.body=JSON.stringify(body); }
+  const r = await fetch(`${API}${path}`, opts);
+  if (!r.ok) { const e = await r.json(); throw new Error(e.detail || 'Request failed'); }
+  return r.json();
+}
+function loading(id) {
+  const el = document.getElementById(id);
+  el.style.display = 'block';
+  el.innerHTML = '<div class="loading-dots"><span></span><span></span><span></span></div> Processing with AI...';
+}
+
+// ══════════════════════════════════════════════
+// DOCUMENTS
+// ══════════════════════════════════════════════
+async function loadDashboardStats() {
+  try {
+    const stats = await api('GET','/dashboard/stats');
+    document.getElementById('statDocs').textContent = stats.documents;
+    document.getElementById('statMeet').textContent = stats.meetings;
+    document.getElementById('statIssues').textContent = stats.issues;
+    document.getElementById('statSched').textContent = stats.schedules;
+    document.getElementById('statSpeeches').textContent = stats.speeches;
+    document.getElementById('statLogs').textContent = stats.audit_logs;
+  } catch(e) {}
+}
+async function uploadDocument() {
+  const file = document.getElementById('docFile').files[0];
+  if (!file) { showToast('error','❌ Please select a file'); return; }
+  loading('docResult');
+  try {
+    const fd = new FormData();
+    fd.append('file', file);
+    fd.append('language', document.getElementById('docLang').value);
+    fd.append('tags', document.getElementById('docTags').value);
+    const d = await api('POST','/documents/upload', fd, true);
+    document.getElementById('docResult').innerHTML = `✅ <strong>Document uploaded!</strong><br/><br/>${d.summary}`;
+    showToast('success','📄 Document uploaded and summarized!');
+    loadDocuments();
+  } catch(e) { document.getElementById('docResult').textContent = '❌ Error: '+e.message; showToast('error','❌ Upload failed'); }
+}
+async function loadDocuments() {
+  try {
+    const docs = await api('GET','/documents');
+    const el = document.getElementById('docsList');
+    if (!docs.length) { el.innerHTML = '<div class="alert alert-info">No documents yet.</div>'; return; }
+    el.innerHTML = docs.map(d => `
+      <div style="padding:12px 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <div>
+            <div style="font-size:13px;font-weight:600">📄 ${d.filename}</div>
+            <div style="font-size:11px;color:var(--text-muted)">ID: ${d.id} · ${d.language} · ${new Date(d.uploaded_at).toLocaleDateString('en-IN')}</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:6px;line-height:1.6">${(d.summary||'').substring(0,200)}...</div>
+      </div>`).join('');
+    document.getElementById('statDocs').textContent = docs.length;
+  } catch(e) { showToast('error','❌ Could not load documents'); }
+}
+async function deleteDoc(id) {
+  if(!confirm('Delete this document?')) return;
+  try { await api('DELETE',`/documents/${id}`); showToast('success','🗑️ Deleted'); loadDocuments(); }
+  catch(e) { showToast('error','❌ Delete failed'); }
+}
+
+// ══════════════════════════════════════════════
+// MEETINGS
+// ══════════════════════════════════════════════
+async function createMeeting() {
+  const title = document.getElementById('meetTitle').value;
+  const notes = document.getElementById('meetTranscript').value;
+  if(!title||!notes){showToast('error','❌ Fill title and notes');return;}
+  loading('meetResult');
+  try {
+    const d = await api('POST','/meetings',{
+      title, date: document.getElementById('meetDate').value||new Date().toISOString(),
+      notes, participants: document.getElementById('meetParticipants').value,
+      language: document.getElementById('meetLang').value
+    });
+    document.getElementById('meetResult').innerHTML = `✅ <strong>Summary:</strong><br/>${d.summary}<br/><br/>📋 <strong>Action Items:</strong><br/>${d.action_items}`;
+    showToast('success','🤝 Meeting summarized!');
+    loadMeetings();
+  } catch(e) { document.getElementById('meetResult').textContent='❌ '+e.message; }
+}
+async function loadMeetings() {
+  try {
+    const ms = await api('GET','/meetings');
+    const el = document.getElementById('meetingsList');
+    if(!ms.length){el.innerHTML='<div class="alert alert-info">No meetings yet.</div>';return;}
+    el.innerHTML = ms.map(m=>`
+      <div style="padding:12px 0;border-bottom:1px solid var(--border)">
+        <div style="font-size:13px;font-weight:600">🤝 ${m.title}</div>
+        <div style="font-size:11px;color:var(--text-muted)">${new Date(m.date).toLocaleDateString('en-IN')}</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:5px">${(m.description||'').substring(0,150)}...</div>
+      </div>`).join('');
+    document.getElementById('statMeet').textContent = ms.length;
+  } catch(e) { showToast('error','❌ Could not load meetings'); }
+}
+
+// ══════════════════════════════════════════════
+// SPEECHES
+// ══════════════════════════════════════════════
+function selectLang(el, hiddenId) {
+  el.closest('.lang-chips').querySelectorAll('.lang-chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(hiddenId).value = el.textContent.toLowerCase();
+}
+async function generateSpeech() {
+  const title = document.getElementById('speechTitle').value;
+  if(!title){showToast('error','❌ Enter speech title');return;}
+  loading('speechResult');
+  const kp = document.getElementById('speechKeyPoints').value.split('\n').filter(x=>x.trim());
+  try {
+    const d = await api('POST','/speeches/generate',{
+      title, occasion: document.getElementById('speechOccasion').value,
+      context: document.getElementById('speechContext').value,
+      tone: document.getElementById('speechTone').value,
+      language: document.getElementById('speechLang').value,
+      duration: parseInt(document.getElementById('speechDuration').value)||5,
+      key_points: kp
+    });
+    document.getElementById('speechResult').innerHTML = `✅ <strong>Speech Generated!</strong><br/><br/>${d.speech}`;
+    showToast('success','🎤 Speech generated!');
+  } catch(e) { document.getElementById('speechResult').textContent='❌ '+e.message; }
+}
+
+// ══════════════════════════════════════════════
+// SCHEDULE
+// ══════════════════════════════════════════════
+async function createSchedule() {
+  const title = document.getElementById('schedTitle').value;
+  if(!title){showToast('error','❌ Enter event title');return;}
+  try {
+    await api('POST','/schedules',{
+      title, description: document.getElementById('schedDesc').value,
+      start_time: document.getElementById('schedStart').value||new Date().toISOString(),
+      end_time: document.getElementById('schedEnd').value||null,
+      location: document.getElementById('schedLocation').value,
+      priority: document.getElementById('schedPriority').value
+    });
+    showToast('success','📅 Schedule added!');
+    loadSchedule();
+  } catch(e) { showToast('error','❌ '+e.message); }
+}
+async function loadSchedule() {
+  try {
+    const items = await api('GET','/schedules');
+    const el = document.getElementById('scheduleList');
+    if(!items.length){el.innerHTML='<div class="alert alert-info">No upcoming schedules.</div>';return;}
+    el.innerHTML = items.map(i=>`
+      <div class="timeline-item">
+        <div class="timeline-time">${new Date(i.date).toLocaleDateString('en-IN',{month:'short',day:'numeric'})}<br/>${new Date(i.date).toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'})}</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="tl-title">${i.title}</div>
+          <div class="tl-meta">${i.description||''}</div>
+        </div>
+      </div>`).join('');
+    document.getElementById('statSched').textContent = items.length;
+  } catch(e) {}
+}
+async function loadBriefing() {
+  const el = document.getElementById('dashBriefing');
+  el.innerHTML='<div class="loading-dots"><span></span><span></span><span></span></div> Generating briefing...';
+  try {
+    const d = await api('POST','/query',{
+      question: 'Generate a brief morning briefing based on my schedule and recent activities',
+      search_context: 'All Documents',
+      language: 'English'
+    });
+    el.textContent = d.answer;
+    showToast('success','✨ Briefing generated!');
+  } catch(e) { el.textContent='❌ Could not generate briefing'; }
+}
+
+// ══════════════════════════════════════════════
+// CONSTITUENCY
+// ══════════════════════════════════════════════
+async function addIssue() {
+  const title = document.getElementById('constTitle').value;
+  if(!title){showToast('error','❌ Enter issue title');return;}
+  try {
+    await api('POST','/issues',{
+      category: document.getElementById('constCategory').value,
+      title, description: document.getElementById('constDesc').value,
+      location: document.getElementById('constLocation').value,
+      priority: document.getElementById('constPriority').value,
+      reported_by_name: document.getElementById('constReportedBy').value
+    });
+    showToast('success','📍 Issue reported!');
+    loadIssues();
+  } catch(e) { showToast('error','❌ '+e.message); }
+}
+async function loadIssues() {
+  try {
+    const items = await api('GET','/issues');
+    const stats = await api('GET','/issues/stats');
+    const el = document.getElementById('issuesList');
+    if(!items.length){el.innerHTML='<div class="alert alert-info">No issues tracked.</div>';return;}
+    document.getElementById('cOpen').textContent=stats.pending;
+    document.getElementById('cProgress').textContent=stats.in_progress;
+    document.getElementById('cResolved').textContent=stats.resolved;
+    document.getElementById('cCritical').textContent=items.filter(i=>i.priority==='Critical').length;
+    document.getElementById('statIssues').textContent=stats.total;
+    el.innerHTML = items.slice(0,20).map(i=>`
+      <div style="padding:10px 0;border-bottom:1px solid var(--border)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div>
+            <div style="font-size:13px;font-weight:600">${i.category.toUpperCase()}: ${i.title}</div>
+            <div style="font-size:11px;color:var(--text-muted)">Created: ${new Date(i.created_at).toLocaleDateString('en-IN')}</div>
+          </div>
+          <div style="display:flex;gap:4px;flex-shrink:0">
+            <span class="badge badge-${i.status.toLowerCase().replace(' ','-')}">${i.status}</span>
+            <span class="badge badge-${i.priority.toLowerCase()}">${i.priority}</span>
+          </div>
+        </div>
+      </div>`).join('');
+  } catch(e) { showToast('error','❌ Could not load issues'); }
+}
+async function loadInsights() {
+  const el = document.getElementById('insightsBox');
+  el.style.display='block';
+  el.innerHTML='<div class="loading-dots"><span></span><span></span><span></span></div> Generating AI insights...';
+  try {
+    const d = await api('POST','/query',{
+      question: 'Analyze all constituency issues and provide insights on trends, priorities, and recommendations',
+      search_context: 'All Documents',
+      language: 'English'
+    });
+    el.textContent = d.answer;
+    showToast('success','🤖 Insights generated!');
+  } catch(e) { el.textContent='❌ '+e.message; }
+}
+async function loadReport() {
+  const el = document.getElementById('insightsBox');
+  el.style.display='block';
+  el.innerHTML='<div class="loading-dots"><span></span><span></span><span></span></div> Generating report...';
+  try {
+    const d = await api('POST','/query',{
+      question: 'Generate a comprehensive constituency report summarizing all issues, their status, and action items',
+      search_context: 'All Documents',
+      language: 'English'
+    });
+    el.textContent = d.answer;
+    showToast('success','📄 Report generated!');
+  } catch(e) { el.textContent='❌ '+e.message; }
+}
+
+// ══════════════════════════════════════════════
+// AI QUERY
+// ══════════════════════════════════════════════
+function setQuery(q) { document.getElementById('queryText').value = q; }
+async function askQuery() {
+  const q = document.getElementById('queryText').value.trim();
+  if(!q){showToast('error','❌ Enter a question');return;}
+  loading('queryResult');
+  try {
+    const d = await api('POST','/query',{
+      question:q,
+      language: document.getElementById('queryLang').value,
+      search_context: document.getElementById('queryContext').value
+    });
+    document.getElementById('queryResult').innerHTML = `🤖 <strong>Answer:</strong><br/><br/>${d.answer}<br/><br/><span style="font-size:11px;color:var(--text-muted)">Sources: ${d.sources?'Document context':'General knowledge'}</span>`;
+    showToast('success','🤖 Query answered!');
+  } catch(e) { document.getElementById('queryResult').textContent='❌ '+e.message; }
+}
+
+// ══════════════════════════════════════════════
+// TRANSLATION
+// ══════════════════════════════════════════════
+async function translateText() {
+  const text = document.getElementById('transText').value.trim();
+  if(!text){showToast('error','❌ Enter text to translate');return;}
+  loading('transResult');
+  try {
+    const d = await api('POST','/translate',{
+      text, from_language: document.getElementById('transFrom').value,
+      to_language: document.getElementById('transTo').value
+    });
+    document.getElementById('transResult').innerHTML = `🌐 <strong>Translation:</strong><br/><br/>${d.translation}`;
+    showToast('success','🌐 Translated!');
+  } catch(e) { document.getElementById('transResult').textContent='❌ '+e.message; }
+}
+
+// ══════════════════════════════════════════════
+// AUDIT LOGS
+// ══════════════════════════════════════════════
+async function loadAuditLogs() {
+  try {
+    const u = document.getElementById('auditUser').value;
+    const a = document.getElementById('auditAction').value;
+    let path = '/audit-logs?';
+    if(u) path+=`user_filter=${u}&`;
+    if(a && a !== 'All Actions') path+=`action_filter=${a}&`;
+    const logs = await api('GET', path);
+    const tbody = document.getElementById('auditBody');
+    document.getElementById('statLogs').textContent = logs.length;
+    if(!logs.length){tbody.innerHTML='<tr><td colspan="6" style="text-align:center;padding:20px;color:var(--text-muted)">No logs found</td></tr>';return;}
+    tbody.innerHTML = logs.map(l=>`
+      <tr>
+        <td style="font-size:12px">${new Date(l.timestamp).toLocaleString('en-IN')}</td>
+        <td><strong>${l.username||'—'}</strong></td>
+        <td><code style="font-size:11px;background:var(--light-bg);padding:2px 6px;border-radius:4px">${l.action}</code></td>
+        <td style="font-size:12px">${l.resource||'—'}</td>
+        <td style="font-size:12px">${l.ip_address||'—'}</td>
+        <td><span class="badge ${l.success?'badge-resolved':'badge-critical'}">${l.success?'✅ OK':'❌ FAIL'}</span></td>
+      </tr>`).join('');
+  } catch(e) { showToast('error','❌ Could not load logs'); }
+}
+
+// ══════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  // Set default values
+  const now = new Date();
+  now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+  document.getElementById('meetDate').value = now.toISOString().slice(0,16);
+  document.getElementById('schedStart').value = now.toISOString().slice(0,16);
+  document.getElementById('schedEnd').value = now.toISOString().slice(0,16);
+  
+  // Update settings page with user info
+  const userName = document.getElementById('userName').textContent;
+  const userRole = document.getElementById('userRole').textContent;
+  const userAvatar = document.getElementById('userAvatar').textContent;
+  
+  if (document.getElementById('settingsName')) {
+    document.getElementById('settingsName').textContent = userName;
+    document.getElementById('settingsUsername').textContent = '@' + userName.toLowerCase().replace(' ', '.');
+    document.getElementById('settingsAvatar').textContent = userAvatar;
+    document.getElementById('settingsRole').textContent = userRole;
+  }
+});
+</script>
+</body>
+</html>

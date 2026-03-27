@@ -4,7 +4,10 @@ from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 import os
 
-DATABASE_URL = "sqlite:///./saransh_setu.db"
+# Get the directory where this file is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATABASE_PATH = os.path.join(BASE_DIR, "saransh_setu.db")
+DATABASE_URL = f"sqlite:///{DATABASE_PATH}"
 
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -84,3 +87,26 @@ def get_db():
 
 def init_db():
     Base.metadata.create_all(bind=engine)
+
+def create_user(username: str, password: str, full_name: str = None):
+    """Create a new user with hashed password"""
+    import bcrypt
+    
+    # Truncate password to 72 bytes for bcrypt compatibility
+    password_bytes = password.encode('utf-8')[:72]
+    hashed_password = bcrypt.hashpw(password_bytes, bcrypt.gensalt()).decode('utf-8')
+    
+    db = SessionLocal()
+    try:
+        user = User(
+            username=username,
+            full_name=full_name or username,
+            hashed_password=hashed_password
+        )
+        db.add(user)
+        db.commit()
+        db.refresh(user)
+        return user
+    finally:
+        db.close()
+
