@@ -34,9 +34,12 @@ Click this link:
 2. Click "Downloads"
 3. Find: `Saransh-Setu-App-main.zip`
 4. Right-click → "Extract All..."
-5. Extract to: `C:\Saransh-Setu`
+5. Extract to: `C:\Saransh-Setu` (or any location you prefer)
 
-**Folder**: `C:\Saransh-Setu\Saransh-Setu-App-main\`
+**⚠️ IMPORTANT:** Remember where you extract! You'll need this path in later steps.
+
+**Folder**: `C:\Saransh-Setu\Saransh-Setu-App-main\`  
+(If you extracted elsewhere, use YOUR path instead)
 
 ---
 
@@ -292,10 +295,17 @@ Type: `/bye` to exit
 
 ### A. Go to App Folder
 
+**⚠️ Replace with YOUR extraction path if different!**
+
 ```
 cd C:\Saransh-Setu\Saransh-Setu-App-main
 ```
 Press `Enter`
+
+**Example:** If you extracted to `D:\MyApps\`, use:
+```
+cd D:\MyApps\Saransh-Setu-App-main
+```
 
 **Verify:**
 ```
@@ -485,8 +495,17 @@ Username: admin
 
 ## 🖥️ STEP 10: CREATE DESKTOP SHORTCUT
 
+**First, make sure you're in the app folder:**
+
 ```
-powershell -Command "$desktopPath = [Environment]::GetFolderPath('Desktop'); $WS = New-Object -ComObject WScript.Shell; $SC = $WS.CreateShortcut(\"$desktopPath\Saransh Setu.lnk\"); $SC.TargetPath = 'C:\Saransh-Setu\Saransh-Setu-App-main\start.bat'; $SC.WorkingDirectory = 'C:\Saransh-Setu\Saransh-Setu-App-main'; $SC.Save(); Write-Host 'Shortcut created!'"
+cd C:\Saransh-Setu\Saransh-Setu-App-main
+```
+Press `Enter`
+
+**Now create the shortcut (works from any location):**
+
+```
+powershell -Command "$desktopPath = [Environment]::GetFolderPath('Desktop'); $WS = New-Object -ComObject WScript.Shell; $SC = $WS.CreateShortcut(\"$desktopPath\Saransh Setu.lnk\"); $SC.TargetPath = '%CD%\start.bat'; $SC.WorkingDirectory = '%CD%'; $SC.Save(); Write-Host 'Shortcut created!'"
 ```
 Press `Enter`
 
@@ -538,6 +557,8 @@ ollama list
 dir C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db
 ```
 ✅ Database file exists
+
+**Note:** If you extracted to a different location, use YOUR path instead of `C:\Saransh-Setu\`
 
 **Check Desktop for "Saransh Setu" shortcut:**
 - Look on your Desktop
@@ -606,7 +627,8 @@ Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, O
 - Try desktop icon
 
 **Forgot password:**
-- Delete: `C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db`
+- Delete database file from YOUR installation folder
+- Example: `C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db`
 - Go back to Step 9C
 
 **Other:**
