@@ -486,40 +486,21 @@ Username: admin
 ## 🖥️ STEP 10: CREATE DESKTOP SHORTCUT
 
 ```
-create-shortcut.bat
+powershell -Command "$desktopPath = [Environment]::GetFolderPath('Desktop'); $WS = New-Object -ComObject WScript.Shell; $SC = $WS.CreateShortcut(\"$desktopPath\Saransh Setu.lnk\"); $SC.TargetPath = 'C:\Saransh-Setu\Saransh-Setu-App-main\start.bat'; $SC.WorkingDirectory = 'C:\Saransh-Setu\Saransh-Setu-App-main'; $SC.Save(); Write-Host 'Shortcut created!'"
 ```
 Press `Enter`
 
-**What you should see:**
-```
-========================================
-Creating Desktop Shortcut...
-========================================
+**Should see**: `Shortcut created!` ✅
 
-Trying standard Desktop location...
+**Check desktop - icon should be there!**
 
-========================================
-SUCCESS! Shortcut created on Desktop!
-========================================
+**If shortcut is not visible:**
+- Check OneDrive Desktop: `%USERPROFILE%\OneDrive\Desktop\`
+- Or manually create: Right-click `start.bat` → Send to → Desktop (create shortcut)
 
-Location: C:\Users\...\Desktop
-
-Check your Desktop for "Saransh Setu" icon!
-```
-
-**✅ See "SUCCESS!"? Shortcut created!**
-
-**Press any key when prompted, then check desktop - icon should be there!**
-
-**If it says "Could not create shortcut automatically":**
-- Follow the manual instructions shown
-- Right-click `start.bat` → Send to → Desktop (create shortcut)
-
-**After shortcut is created:**
 ```
 exit
 ```
-Press `Enter` to close CMD
 
 ---
 
