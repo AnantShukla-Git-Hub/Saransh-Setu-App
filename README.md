@@ -494,6 +494,10 @@ Press `Enter`
 
 **Check desktop - icon should be there!**
 
+**If shortcut is not visible:**
+- Check OneDrive Desktop: `%USERPROFILE%\OneDrive\Desktop\`
+- Or manually create: Right-click `start.bat` → Send to → Desktop (create shortcut)
+
 ```
 exit
 ```
@@ -522,12 +526,13 @@ npm --version
 ```
 ollama --version
 ```
-✅ `ollama version X.X.X` (any version)
+✅ `ollama version X.X.X` (any version)  
+⚠️ If you see "Warning: could not connect to a running Ollama instance" - this is normal! Ollama will auto-start when you launch the app.
 
 ```
 ollama list
 ```
-✅ Both models listed
+✅ Both models listed (llama3:8b and nomic-embed-text)
 
 ```
 dir C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db
@@ -538,6 +543,8 @@ dir C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db
 dir "%USERPROFILE%\Desktop\Saransh Setu.lnk"
 ```
 ✅ Desktop shortcut exists
+
+**Note:** If shortcut is not on Desktop, check `%USERPROFILE%\OneDrive\Desktop\` or manually create it by right-clicking `start.bat` → Send to → Desktop (create shortcut)
 
 ```
 exit
