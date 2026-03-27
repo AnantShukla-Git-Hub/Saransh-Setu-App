@@ -6,6 +6,20 @@
 
 ---
 
+## ⚠️ SYSTEM REQUIREMENTS
+
+**Minimum:**
+- Windows 10 or 11
+- 8GB RAM (4GB will be very slow)
+- 20GB free disk space
+- Internet (only for installation)
+
+**Recommended:**
+- 16GB RAM for smooth AI operations
+- SSD for faster performance
+
+---
+
 ## 📥 STEP 1: DOWNLOAD
 
 Click this link:
@@ -472,18 +486,13 @@ Username: admin
 ## 🖥️ STEP 10: CREATE DESKTOP SHORTCUT
 
 ```
-powershell -Command "$WS = New-Object -ComObject WScript.Shell; $SC = $WS.CreateShortcut('%USERPROFILE%\Desktop\Saransh Setu.lnk'); $SC.TargetPath = 'C:\Saransh-Setu\Saransh-Setu-App-main\start.bat'; $SC.WorkingDirectory = 'C:\Saransh-Setu\Saransh-Setu-App-main'; $SC.Save()"
+powershell -Command "$desktopPath = [Environment]::GetFolderPath('Desktop'); $WS = New-Object -ComObject WScript.Shell; $SC = $WS.CreateShortcut(\"$desktopPath\Saransh Setu.lnk\"); $SC.TargetPath = 'C:\Saransh-Setu\Saransh-Setu-App-main\start.bat'; $SC.WorkingDirectory = 'C:\Saransh-Setu\Saransh-Setu-App-main'; $SC.Save(); Write-Host 'Shortcut created!'"
 ```
 Press `Enter`
 
-**Verify:**
-```
-dir "%USERPROFILE%\Desktop\Saransh Setu.lnk"
-```
+**Should see**: `Shortcut created!` ✅
 
-**Should see**: Saransh Setu.lnk ✅
-
-**Also check desktop - icon should be there!**
+**Check desktop - icon should be there!**
 
 ```
 exit

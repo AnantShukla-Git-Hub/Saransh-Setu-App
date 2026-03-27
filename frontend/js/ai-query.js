@@ -1,4 +1,7 @@
-const API_BASE_URL = 'http://127.0.0.1:8000';
+if (!window.API_BASE_URL) {
+    window.API_BASE_URL = 'http://127.0.0.1:8000';
+}
+const API_BASE_URL = window.API_BASE_URL;
 
 document.getElementById('queryForm').addEventListener('submit', async (e) => {
     e.preventDefault();

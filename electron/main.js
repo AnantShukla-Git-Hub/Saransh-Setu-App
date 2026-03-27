@@ -19,7 +19,10 @@ function createWindow() {
   });
 
   mainWindow.maximize();
-  mainWindow.loadFile(path.join(__dirname, '../frontend/startup.html'));
+  mainWindow.loadFile(path.join(__dirname, '../backend/app.html'));
+  
+  // Open DevTools for debugging
+  mainWindow.webContents.openDevTools();
   
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
@@ -137,7 +140,18 @@ ipcMain.handle('check-services', async () => {
   return { ollama: ollamaRunning, backend: backendRunning };
 });
 
-app.whenReady().then(createWindow);
+app.whenReady().then(async () => {
+  // Start services first
+  try {
+    await startOllama();
+    await startBackend();
+  } catch (error) {
+    console.error('Failed to start services:', error);
+  }
+  
+  // Then create window
+  createWindow();
+});
 
 app.on('window-all-closed', () => {
   stopAllServices();
