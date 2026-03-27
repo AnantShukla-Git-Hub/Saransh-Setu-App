@@ -509,15 +509,17 @@ Check your Desktop for "Saransh Setu" icon!
 
 **✅ See "SUCCESS!"? Shortcut created!**
 
-**Check desktop - icon should be there!**
+**Press any key when prompted, then check desktop - icon should be there!**
 
 **If it says "Could not create shortcut automatically":**
 - Follow the manual instructions shown
 - Right-click `start.bat` → Send to → Desktop (create shortcut)
 
+**After shortcut is created:**
 ```
 exit
 ```
+Press `Enter` to close CMD
 
 ---
 
