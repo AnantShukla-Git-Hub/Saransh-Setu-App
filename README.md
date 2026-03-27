@@ -486,17 +486,34 @@ Username: admin
 ## 🖥️ STEP 10: CREATE DESKTOP SHORTCUT
 
 ```
-powershell -Command "$desktopPath = [Environment]::GetFolderPath('Desktop'); $WS = New-Object -ComObject WScript.Shell; $SC = $WS.CreateShortcut(\"$desktopPath\Saransh Setu.lnk\"); $SC.TargetPath = 'C:\Saransh-Setu\Saransh-Setu-App-main\start.bat'; $SC.WorkingDirectory = 'C:\Saransh-Setu\Saransh-Setu-App-main'; $SC.Save(); Write-Host 'Shortcut created!'"
+create-shortcut.bat
 ```
 Press `Enter`
 
-**Should see**: `Shortcut created!` ✅
+**What you should see:**
+```
+========================================
+Creating Desktop Shortcut...
+========================================
+
+Trying standard Desktop location...
+
+========================================
+SUCCESS! Shortcut created on Desktop!
+========================================
+
+Location: C:\Users\...\Desktop
+
+Check your Desktop for "Saransh Setu" icon!
+```
+
+**✅ See "SUCCESS!"? Shortcut created!**
 
 **Check desktop - icon should be there!**
 
-**If shortcut is not visible:**
-- Check OneDrive Desktop: `%USERPROFILE%\OneDrive\Desktop\`
-- Or manually create: Right-click `start.bat` → Send to → Desktop (create shortcut)
+**If it says "Could not create shortcut automatically":**
+- Follow the manual instructions shown
+- Right-click `start.bat` → Send to → Desktop (create shortcut)
 
 ```
 exit
@@ -539,12 +556,10 @@ dir C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db
 ```
 ✅ Database file exists
 
-```
-dir "%USERPROFILE%\Desktop\Saransh Setu.lnk"
-```
-✅ Desktop shortcut exists
-
-**Note:** If shortcut is not on Desktop, check `%USERPROFILE%\OneDrive\Desktop\` or manually create it by right-clicking `start.bat` → Send to → Desktop (create shortcut)
+**Check Desktop for "Saransh Setu" shortcut:**
+- Look on your Desktop
+- If not visible, check `%USERPROFILE%\OneDrive\Desktop\`
+- Or run `create-shortcut.bat` again
 
 ```
 exit
