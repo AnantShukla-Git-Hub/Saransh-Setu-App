@@ -2,220 +2,184 @@
 
 **Your Smart AI Helper for Government Work**
 
-100% Offline. Supports 11 Indian Languages. Works on your computer only.
+100% Offline. Supports 11 Indian Languages.
 
 ---
 
-## 📥 DOWNLOAD THE APP
+## 📥 STEP 1: DOWNLOAD
 
-### 🎯 Click this link to download:
+Click this link:
 
 ## **👉 [CLICK HERE TO DOWNLOAD](https://github.com/AnantShukla-Git-Hub/Saransh-Setu-App/archive/refs/heads/main.zip) 👈**
 
-File will download to your Downloads folder.
-
 ---
 
-## 🚀 INSTALLATION STEPS
-
-### ⚠️ IMPORTANT:
-- Follow steps in order
-- Don't skip any step
-- Copy commands exactly
-- Write down your username and password!
-
----
-
-## STEP 1: Unzip the File
+## 📂 STEP 2: EXTRACT
 
 1. Press `Windows Key + E`
 2. Click "Downloads"
-3. Find file: `Saransh-Setu-App-main.zip`
-4. Right-click on it
-5. Click "Extract All..."
-6. Click "Browse..."
-7. Go to `C:\`
-8. Click "Make New Folder"
-9. Type: `Saransh-Setu`
-10. Click "Select Folder"
-11. Click "Extract"
+3. Find: `Saransh-Setu-App-main.zip`
+4. Right-click → "Extract All..."
+5. Extract to: `C:\Saransh-Setu`
 
-**✅ File extracted to: `C:\Saransh-Setu\Saransh-Setu-App-main\`**
+**Folder**: `C:\Saransh-Setu\Saransh-Setu-App-main\`
 
 ---
 
-## STEP 2: Open Command Prompt
+## 💻 STEP 3: OPEN CMD
 
 1. Press `Windows Key + R`
 2. Type: `cmd`
 3. Press `Enter`
 
-**✅ Black window opens**
+**Black window opens - keep it open for all steps below!**
 
 ---
 
-## STEP 3: Install Python
+## 🚀 STEP 4: INSTALL EVERYTHING (Copy-Paste Commands)
 
-### Download Python:
+### A. Download Python Installer
 
-1. **Click this link**: [Download Python 3.11](https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe)
-   - File will download (about 25MB)
+Copy and paste:
+```
+powershell -Command "Invoke-WebRequest -Uri 'https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe' -OutFile '%TEMP%\python-installer.exe'"
+```
+Press `Enter`
 
-2. **Go to Downloads folder**
-   - Press `Windows Key + E`
-   - Click "Downloads"
+Wait 30 seconds.
 
-3. **Find file**: `python-3.11.9-amd64.exe`
+### B. Run Python Installer
 
-4. **Double-click the file**
+Copy and paste:
+```
+%TEMP%\python-installer.exe
+```
+Press `Enter`
 
-5. **⚠️ IMPORTANT - Check the box at bottom:**
-   - ✅ Check: "Add Python to PATH"
-   - Then click "Install Now"
+**Installer window opens:**
+1. ✅ Check: "Add Python to PATH"
+2. Click "Install Now"
+3. Wait 2-3 minutes
+4. Click "Close"
 
-6. **Wait 2-3 minutes**
+### C. Download Node.js Installer
 
-7. **Click "Close"**
+Copy and paste:
+```
+powershell -Command "Invoke-WebRequest -Uri 'https://nodejs.org/dist/v20.11.1/node-v20.11.1-x64.msi' -OutFile '%TEMP%\node-installer.msi'"
+```
+Press `Enter`
 
-**Close and reopen CMD:**
-- Type: `exit` and press `Enter`
-- Press `Windows Key + R`, type `cmd`, press `Enter`
+Wait 1 minute.
 
-**Verify:**
+### D. Run Node.js Installer
+
+Copy and paste:
+```
+msiexec /i %TEMP%\node-installer.msi
+```
+Press `Enter`
+
+**Installer window opens:**
+1. Click "Next"
+2. Click "Next"
+3. Click "Next"
+4. Click "Install"
+5. Click "Yes" if asked
+6. Wait 3-5 minutes
+7. Click "Finish"
+
+### E. Download Ollama Installer
+
+Copy and paste:
+```
+powershell -Command "Invoke-WebRequest -Uri 'https://ollama.com/download/OllamaSetup.exe' -OutFile '%TEMP%\ollama-installer.exe'"
+```
+Press `Enter`
+
+Wait 2 minutes (large file).
+
+### F. Run Ollama Installer
+
+Copy and paste:
+```
+%TEMP%\ollama-installer.exe
+```
+Press `Enter`
+
+**Installer window opens:**
+1. Click "Install"
+2. Click "Yes" if asked
+3. Wait 2-3 minutes
+4. Closes automatically
+
+### G. Restart CMD
+
+Close CMD:
+```
+exit
+```
+
+Open CMD again:
+1. Press `Windows Key + R`
+2. Type: `cmd`
+3. Press `Enter`
+
+### H. Verify Installations
+
+Copy and paste these one by one:
+
 ```
 python --version
 ```
-
 Should show: `Python 3.11.9`
 
-**✅ If yes, continue to Step 4**
-
-**❌ If "not recognized":**
-- Restart computer
-- Open CMD again
-- Try verify command again
-
----
-
-## STEP 4: Install Node.js
-
-### Download Node.js:
-
-1. **Click this link**: [Download Node.js](https://nodejs.org/dist/v20.11.1/node-v20.11.1-x64.msi)
-   - File will download (about 30MB)
-
-2. **Go to Downloads folder**
-
-3. **Find file**: `node-v20.11.1-x64.msi`
-
-4. **Double-click the file**
-
-5. **Click through installer:**
-   - Click "Next"
-   - Click "Next" (accept license)
-   - Click "Next" (default location)
-   - Click "Next" (default features)
-   - Click "Install"
-   - If Windows asks permission, click "Yes"
-
-6. **Wait 3-5 minutes**
-
-7. **Click "Finish"**
-
-**Close and reopen CMD:**
-- Type: `exit` and press `Enter`
-- Press `Windows Key + R`, type `cmd`, press `Enter`
-
-**Verify:**
 ```
 node --version
 ```
-
 Should show: `v20.11.1`
 
 ```
 npm --version
 ```
-
 Should show: `10.2.4`
 
-**✅ If yes, continue to Step 5**
-
-**❌ If "not recognized":**
-- Restart computer
-- Open CMD again
-- Try verify commands again
-
----
-
-## STEP 5: Install Ollama
-
-### Download Ollama:
-
-1. **Click this link**: [Download Ollama](https://ollama.com/download/OllamaSetup.exe)
-   - File will download (about 500MB - large!)
-
-2. **Go to Downloads folder**
-
-3. **Find file**: `OllamaSetup.exe`
-
-4. **Double-click the file**
-
-5. **Click "Install"**
-   - If Windows asks permission, click "Yes"
-
-6. **Wait 2-3 minutes**
-
-7. **Installer closes automatically when done**
-
-**Close and reopen CMD:**
-- Type: `exit` and press `Enter`
-- Press `Windows Key + R`, type `cmd`, press `Enter`
-
-**Verify:**
 ```
 ollama --version
 ```
-
 Should show: `ollama version 0.5.4`
 
-**✅ If yes, continue to Step 6**
+**✅ All show versions? Good! Continue below.**
 
-**❌ If "not recognized":**
-- Restart computer
-- Open CMD again
-- Try verify command again
+**❌ Any shows "not recognized"? Restart computer and verify again.**
 
 ---
 
-## STEP 6: Download AI Models (Takes 15-30 Minutes!)
+## 🧠 STEP 5: DOWNLOAD AI MODELS (15-30 Minutes)
 
-### Download Model 1 (4.7GB):
+### A. Download Llama3 (4.7GB)
 
+Copy and paste:
 ```
 ollama pull llama3:8b
 ```
-
 Press `Enter`
 
-**Wait 10-20 minutes** (progress bar will show)
+**Wait 10-20 minutes** (progress bar shows).
 
-You'll see: "success"
+### B. Download Nomic Embed (274MB)
 
-### Download Model 2 (274MB):
-
+Copy and paste:
 ```
 ollama pull nomic-embed-text
 ```
-
 Press `Enter`
 
-**Wait 2-5 minutes**
+**Wait 2-5 minutes**.
 
-You'll see: "success"
+### C. Verify Models
 
-### Verify both downloaded:
-
+Copy and paste:
 ```
 ollama list
 ```
@@ -226,218 +190,195 @@ llama3:8b              4.7 GB
 nomic-embed-text       274 MB
 ```
 
-**✅ If you see both, continue to Step 7**
+**✅ See both? Perfect!**
 
 ---
 
-## STEP 7: Go to App Folder
+## 📦 STEP 6: INSTALL PACKAGES
 
-Copy and paste this command:
+### A. Go to App Folder
 
+Copy and paste:
 ```
 cd C:\Saransh-Setu\Saransh-Setu-App-main
 ```
-
 Press `Enter`
 
-**Verify:**
-```
-dir
-```
+### B. Create Virtual Environment
 
-Should show: `backend`, `frontend`, `electron`, `setup.bat`
-
-**✅ If yes, continue to Step 8**
-
----
-
-## STEP 8: Install Python Packages
-
-### Command 1:
-
+Copy and paste:
 ```
 python -m venv backend\venv
 ```
-
 Press `Enter`
 
-**Wait 10-20 seconds**
+Wait 20 seconds.
 
-### Command 2:
+### C. Activate Virtual Environment
 
+Copy and paste:
 ```
 backend\venv\Scripts\activate
 ```
-
 Press `Enter`
 
-You'll see `(venv)` at start of line
+You'll see `(venv)` at start of line.
 
-### Command 3 (Takes 5-10 minutes):
+### D. Install Python Packages (5-10 Minutes)
 
+Copy and paste:
 ```
 pip install -r backend\requirements.txt
 ```
-
 Press `Enter`
 
-**Wait 5-10 minutes** (lots of text will scroll)
+**Wait 5-10 minutes** (lots of text scrolls).
 
 You'll see: "Successfully installed..."
 
-**✅ If yes, continue to Step 9**
+### E. Install Electron (2-3 Minutes)
 
----
-
-## STEP 9: Install Electron
-
-### Command 1:
-
+Copy and paste:
 ```
 cd electron
 ```
-
 Press `Enter`
 
-### Command 2 (Takes 2-3 minutes):
-
+Copy and paste:
 ```
 npm install
 ```
-
 Press `Enter`
 
-**Wait 2-3 minutes**
+**Wait 2-3 minutes**.
 
 You'll see: "added 123 packages"
 
-### Command 3:
-
+Copy and paste:
 ```
 cd ..
 ```
-
 Press `Enter`
-
-**✅ Continue to Step 10**
 
 ---
 
-## STEP 10: Create Your Account
+## 👤 STEP 7: CREATE YOUR ACCOUNT
 
-### Command 1:
+### A. Activate Virtual Environment
 
+Copy and paste:
 ```
 backend\venv\Scripts\activate
 ```
-
 Press `Enter`
 
-### Command 2:
+### B. Create Database
 
+Copy and paste:
 ```
 python -c "from backend.database import init_db; init_db(); print('Database created!')"
 ```
-
 Press `Enter`
 
 You'll see: "Database created!"
 
-### Command 3:
+### C. Create User Account
 
+Copy and paste:
 ```
-python -c "from backend.database import create_user; import getpass; username = input('Enter username: '); password = getpass.getpass('Enter password: '); create_user(username, password); print(f'User {username} created successfully!')"
+python -c "from backend.database import create_user; import getpass; username = input('Enter username: '); password = getpass.getpass('Enter password: '); create_user(username, password); print('User created!')"
 ```
-
 Press `Enter`
 
 It asks: "Enter username:"
-- Type your username (example: `admin`)
+- Type: `admin` (or your choice)
 - Press `Enter`
 
 It asks: "Enter password:"
 - Type your password (you won't see it)
 - Press `Enter`
 
-You'll see: "User admin created successfully!"
+You'll see: "User created!"
 
-### ✍️ WRITE THESE DOWN:
+### ✍️ WRITE DOWN:
 
 **Username:** _______________
 
 **Password:** _______________
 
-**✅ Continue to Step 11**
+---
+
+## 🖥️ STEP 8: CREATE DESKTOP SHORTCUT
+
+### A. Create Shortcut
+
+Copy and paste:
+```
+powershell -Command "$WS = New-Object -ComObject WScript.Shell; $SC = $WS.CreateShortcut('%USERPROFILE%\Desktop\Saransh Setu.lnk'); $SC.TargetPath = 'C:\Saransh-Setu\Saransh-Setu-App-main\start.bat'; $SC.WorkingDirectory = 'C:\Saransh-Setu\Saransh-Setu-App-main'; $SC.Save()"
+```
+Press `Enter`
+
+**Icon appears on desktop!**
+
+### B. Close CMD
+
+Copy and paste:
+```
+exit
+```
+Press `Enter`
 
 ---
 
-## STEP 11: Create Desktop Shortcut
+## ✅ STEP 9: VERIFY EVERYTHING
 
-1. Go to Desktop (press `Windows Key + D`)
-2. Right-click on empty space
-3. Click "New" → "Shortcut"
-4. Paste this:
-   ```
-   C:\Saransh-Setu\Saransh-Setu-App-main\start.bat
-   ```
-5. Click "Next"
-6. Type: `Saransh Setu`
-7. Click "Finish"
+Open CMD again:
+1. Press `Windows Key + R`
+2. Type: `cmd`
+3. Press `Enter`
 
-**✅ Icon appears on desktop**
-
----
-
-## STEP 12: Verify Everything
-
-Open CMD (press `Windows Key + R`, type `cmd`, press `Enter`)
-
-Copy and paste these commands one by one:
+Copy and paste these one by one:
 
 ```
 python --version
 ```
-Should show: `Python 3.11.x` ✅
+✅ Should show: `Python 3.11.9`
 
 ```
 node --version
 ```
-Should show: `v20.x.x` ✅
-
-```
-npm --version
-```
-Should show: `10.x.x` ✅
+✅ Should show: `v20.11.1`
 
 ```
 ollama --version
 ```
-Should show: `ollama version 0.x.x` ✅
+✅ Should show: `ollama version 0.5.4`
 
 ```
 ollama list
 ```
-Should show both models ✅
+✅ Should show both models
 
-Type: `exit` and press `Enter`
+Close CMD:
+```
+exit
+```
 
-**✅ All checks passed? Setup complete! 🎉**
+**✅ All checks passed? Installation complete! 🎉**
 
 ---
 
 ## 🎯 HOW TO USE
 
-### Start the App:
+### Start:
 
-1. Double-click "Saransh Setu" icon on desktop
-2. Click "▶ Start Application" button
+1. Double-click "Saransh Setu" on desktop
+2. Click "▶ Start Application"
 3. Wait for 3 green checkmarks (10-15 seconds)
-4. Login with your username and password
+4. Login with username and password
 5. Dashboard opens!
 
-### Features Available:
-
-Click any button in the blue menu bar:
+### Features:
 
 - **📊 Dashboard** - Overview
 - **📄 Documents** - Upload and summarize files
@@ -445,15 +386,15 @@ Click any button in the blue menu bar:
 - **🎤 Speeches** - Generate speeches
 - **📅 Schedule** - Manage calendar
 - **🏘️ Constituency** - Track issues
-- **🤖 AI Query** - Ask questions
+- **🤖 AI Query** - Ask AI questions
 - **🌐 Translate** - Translate languages
-- **📋 Audit Logs** - View activity
+- **📋 Audit Logs** - View all activity
 - **⚙️ Settings** - Change settings
 
-### Close the App:
+### Close:
 
-1. Click "🚪 Logout" (top right)
-2. Close window (click X)
+1. Click "🚪 Logout"
+2. Close window
 
 ---
 
@@ -465,31 +406,27 @@ Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, O
 
 ## 🆘 PROBLEMS?
 
+**"not recognized" error:**
+- Restart computer
+- Open CMD and verify again
+
+**Download failed:**
+- Check internet connection
+- Run the download command again
+
+**Installation failed:**
+- Run the install command again
+
 **App won't start:**
 - Restart computer
-- Try again
+- Double-click desktop icon
 
 **Forgot password:**
 - Delete: `C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db`
-- Go back to Step 10
+- Go back to Step 7C
 
 **Other problems:**
 - Read: `TROUBLESHOOTING.md`
-
----
-
-## � RULES
-
-### ✅ DO:
-- Remember username and password
-- Use desktop icon to start
-- Wait for green checkmarks
-- Click Logout before closing
-
-### ❌ DON'T:
-- Don't delete app files
-- Don't open app twice
-- Don't share password
 
 ---
 
