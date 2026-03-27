@@ -1,6 +1,6 @@
 # 🏛️ Saransh Setu (सारांश सेतु)
 
-**Your Smart AI Helper for Government Work**
+**Your Smart AI Assistant for Government Work**
 
 100% Offline. Supports 11 Indian Languages.
 
