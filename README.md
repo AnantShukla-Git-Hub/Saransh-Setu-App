@@ -311,6 +311,15 @@ Press `Enter`
 
 ### D. Install Python Packages (5-10 Minutes)
 
+**First, upgrade pip:**
+```
+python -m pip install --upgrade pip
+```
+Press `Enter`. Wait 10 seconds.
+
+**Should see**: `Successfully installed pip-26.0.1` ✅
+
+**Now install packages:**
 ```
 pip install -r backend\requirements.txt
 ```
