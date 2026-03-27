@@ -60,20 +60,6 @@ cache/
 # Old reference project (not for users)
 old-reference/
 
-# Kiro Internal Documentation (not for users)
-KIRO_SESSION_HANDOFF.md
-KIRO_HANDOFF_MARCH_27_2026.md
-BUILD_COMPLETE.md
-DEVELOPMENT_STATUS.md
-WHATS_LEFT.md
-FINAL_CHECKLIST.md
-GITHUB_PUSH_GUIDE.md
-PUSH_SUMMARY.md
-PROJECT_STRUCTURE.md
-QUICK_TEST_GUIDE.md
-TESTING_BUGS_AND_FIXES.md
-PHASE_1_TEST_GUIDE.md
-PHASE_1_PREP.md
-READY_TO_PUSH.md
-FINAL_PRE_PUSH_CHECK.md
-FINAL_FIXES_SUMMARY.md
+# Old reference project (not for users)
+old-reference/
+
