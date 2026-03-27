@@ -56,21 +56,26 @@ File will download to your Downloads folder.
 
 ## STEP 3: Install Python
 
-Copy and paste this command:
+### Download Python:
 
-```
-winget install Python.Python.3.11
-```
+1. **Click this link**: [Download Python 3.11](https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe)
+   - File will download (about 25MB)
 
-Press `Enter`
+2. **Go to Downloads folder**
+   - Press `Windows Key + E`
+   - Click "Downloads"
 
-Type: `Y`
+3. **Find file**: `python-3.11.9-amd64.exe`
 
-Press `Enter`
+4. **Double-click the file**
 
-**Wait 2-3 minutes**
+5. **⚠️ IMPORTANT - Check the box at bottom:**
+   - ✅ Check: "Add Python to PATH"
+   - Then click "Install Now"
 
-You'll see: "Successfully installed"
+6. **Wait 2-3 minutes**
+
+7. **Click "Close"**
 
 **Close and reopen CMD:**
 - Type: `exit` and press `Enter`
@@ -81,29 +86,41 @@ You'll see: "Successfully installed"
 python --version
 ```
 
-Should show: `Python 3.11.x`
+Should show: `Python 3.11.9`
 
 **✅ If yes, continue to Step 4**
+
+**❌ If "not recognized":**
+- Restart computer
+- Open CMD again
+- Try verify command again
 
 ---
 
 ## STEP 4: Install Node.js
 
-Copy and paste this command:
+### Download Node.js:
 
-```
-winget install OpenJS.NodeJS.LTS
-```
+1. **Click this link**: [Download Node.js](https://nodejs.org/dist/v20.11.1/node-v20.11.1-x64.msi)
+   - File will download (about 30MB)
 
-Press `Enter`
+2. **Go to Downloads folder**
 
-Type: `Y`
+3. **Find file**: `node-v20.11.1-x64.msi`
 
-Press `Enter`
+4. **Double-click the file**
 
-**Wait 3-5 minutes**
+5. **Click through installer:**
+   - Click "Next"
+   - Click "Next" (accept license)
+   - Click "Next" (default location)
+   - Click "Next" (default features)
+   - Click "Install"
+   - If Windows asks permission, click "Yes"
 
-You'll see: "Successfully installed"
+6. **Wait 3-5 minutes**
+
+7. **Click "Finish"**
 
 **Close and reopen CMD:**
 - Type: `exit` and press `Enter`
@@ -114,35 +131,42 @@ You'll see: "Successfully installed"
 node --version
 ```
 
-Should show: `v20.x.x`
+Should show: `v20.11.1`
 
 ```
 npm --version
 ```
 
-Should show: `10.x.x`
+Should show: `10.2.4`
 
 **✅ If yes, continue to Step 5**
+
+**❌ If "not recognized":**
+- Restart computer
+- Open CMD again
+- Try verify commands again
 
 ---
 
 ## STEP 5: Install Ollama
 
-Copy and paste this command:
+### Download Ollama:
 
-```
-winget install Ollama.Ollama
-```
+1. **Click this link**: [Download Ollama](https://ollama.com/download/OllamaSetup.exe)
+   - File will download (about 500MB - large!)
 
-Press `Enter`
+2. **Go to Downloads folder**
 
-Type: `Y`
+3. **Find file**: `OllamaSetup.exe`
 
-Press `Enter`
+4. **Double-click the file**
 
-**Wait 2-3 minutes**
+5. **Click "Install"**
+   - If Windows asks permission, click "Yes"
 
-You'll see: "Successfully installed"
+6. **Wait 2-3 minutes**
+
+7. **Installer closes automatically when done**
 
 **Close and reopen CMD:**
 - Type: `exit` and press `Enter`
@@ -153,9 +177,14 @@ You'll see: "Successfully installed"
 ollama --version
 ```
 
-Should show: `ollama version 0.x.x`
+Should show: `ollama version 0.5.4`
 
 **✅ If yes, continue to Step 6**
+
+**❌ If "not recognized":**
+- Restart computer
+- Open CMD again
+- Try verify command again
 
 ---
 
