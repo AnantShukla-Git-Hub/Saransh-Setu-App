@@ -585,11 +585,11 @@ exit
 
 ### Features:
 
-- **📊 Dashboard** - Overview
-- **📄 Documents** - Upload and summarize
-- **💼 Meetings** - Log and summarize
-- **🎤 Speeches** - Generate speeches
-- **📅 Schedule** - Manage calendar
+- **📊 Dashboard** - Overview.
+- **📄 Documents** - Upload and summarize.
+- **💼 Meetings** - Log and summarize.
+- **🎤 Speeches** - Generate speeches.
+- **📅 Schedule** - Manage calendar.
 - **🏘️ Constituency** - Track issues
 - **🤖 AI Query** - Ask questions
 - **🌐 Translate** - Translate languages
