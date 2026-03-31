@@ -620,11 +620,11 @@ Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, O
 - Run command again
 
 **Installation failed:**
-- Run install command again
+- Run install command again.
 
 **App won't start:**
-- Restart computer
-- Try desktop icon
+- Restart computer.
+- Try desktop icon.
 
 **Forgot password:**
 - Delete database file from YOUR installation folder
