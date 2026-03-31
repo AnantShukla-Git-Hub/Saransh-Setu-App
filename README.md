@@ -78,7 +78,7 @@ Press `Enter`
 **Installer opens:**
 1. ✅ Check: "Add Python to PATH"
 2. Click "Install Now"
-3. Wait 2-3 minutes
+3. Wait 2-3 minutes.
 4. Click "Close"
 
 ### C. Verify Python
@@ -97,11 +97,11 @@ python --version
 **Should see**: `Python 3.11.9` ✅
 
 **⚠️ IMPORTANT: If you see Python 3.12, 3.13, or 3.14:**
-- These versions are TOO NEW
-- Packages are not compatible yet
+- These versions are TOO NEW.
+- Packages are not compatible yet.
 - You MUST uninstall and install Python 3.11.9
 - Go to: Settings → Apps → Python → Uninstall
-- Then run Step 4A and 4B again
+- Then run Step 4A and 4B again.
 
 **Check path:**
 ```
