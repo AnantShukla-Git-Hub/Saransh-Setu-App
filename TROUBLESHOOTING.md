@@ -1,10 +1,10 @@
-# 🔧 Troubleshooting Guide
+#  Troubleshooting Guide
 
 This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 1. [Installation Problems](#installation-problems)
 2. [Setup Script Problems](#setup-script-problems)
@@ -15,7 +15,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 🔴 INSTALLATION PROBLEMS
+##  INSTALLATION PROBLEMS
 
 ### Problem 1: "Python is not recognized"
 
@@ -25,7 +25,7 @@ This guide helps you fix common problems with Saransh Setu.
 1. Go to: https://www.python.org/downloads/
 2. Download Python 3.11
 3. Run the installer
-4. **⚠️ IMPORTANT**: Check the box "Add Python to PATH"
+4. ** IMPORTANT**: Check the box "Add Python to PATH"
 5. Click "Install Now"
 6. After installation, **restart your computer**
 7. Test again:
@@ -71,7 +71,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 🔴 SETUP SCRIPT PROBLEMS
+##  SETUP SCRIPT PROBLEMS
 
 ### Problem 4: Setup.bat won't run
 
@@ -213,7 +213,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 🔴 APPLICATION WON'T START
+##  APPLICATION WON'T START
 
 ### Problem 10: Nothing happens when clicking shortcut
 
@@ -265,7 +265,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 🔴 LOGIN PROBLEMS
+##  LOGIN PROBLEMS
 
 ### Problem 24: Forgot Username or Password
 
@@ -302,7 +302,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 🔴 FEATURE PROBLEMS
+##  FEATURE PROBLEMS
 
 ### Problem 24: Document upload fails
 
@@ -346,7 +346,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 🔴 PERFORMANCE PROBLEMS
+##  PERFORMANCE PROBLEMS
 
 ### Problem 24: Application is very slow
 
@@ -389,7 +389,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 🔴 OTHER PROBLEMS
+##  OTHER PROBLEMS
 
 ### Problem 24: Can't find downloaded ZIP file
 
@@ -427,7 +427,7 @@ This guide helps you fix common problems with Saransh Setu.
 
 ---
 
-## 📞 Still Having Problems?
+##  Still Having Problems?
 
 If none of these solutions work:
 
@@ -445,7 +445,7 @@ If none of these solutions work:
 
 ---
 
-## 🔍 How to Get Error Details
+##  How to Get Error Details
 
 If you need to report a problem:
 
