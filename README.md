@@ -6,7 +6,7 @@
 
 ---
 
-## ⚠️ SYSTEM REQUIREMENTS
+##  SYSTEM REQUIREMENTS
 
 **Minimum:**
 - Windows 10 or 11
@@ -20,15 +20,15 @@
 
 ---
 
-## 📥 STEP 1: DOWNLOAD
+##  STEP 1: DOWNLOAD
 
 Click this link:
 
-## **👉 [CLICK HERE TO DOWNLOAD](https://github.com/AnantShukla-Git-Hub/Saransh-Setu-App/archive/refs/heads/main.zip) 👈**
+## ** [CLICK HERE TO DOWNLOAD](https://github.com/AnantShukla-Git-Hub/Saransh-Setu-App/archive/refs/heads/main.zip) **
 
 ---
 
-## 📂 STEP 2: EXTRACT
+##  STEP 2: EXTRACT
 
 1. Press `Windows Key + E`
 2. Click "Downloads"
@@ -36,14 +36,14 @@ Click this link:
 4. Right-click → "Extract All..."
 5. Extract to: `C:\Saransh-Setu` (or any location you prefer)
 
-**⚠️ IMPORTANT:** Remember where you extract! You'll need this path in later steps.
+** IMPORTANT:** Remember where you extract! You'll need this path in later steps.
 
 **Folder**: `C:\Saransh-Setu\Saransh-Setu-App-main\`  
 (If you extracted elsewhere, use YOUR path instead)
 
 ---
 
-## 💻 STEP 3: OPEN CMD
+##  STEP 3: OPEN CMD
 
 1. Press `Windows Key + R`
 2. Type: `cmd`
@@ -53,7 +53,7 @@ Click this link:
 
 ---
 
-## 🚀 STEP 4: INSTALL PYTHON
+##  STEP 4: INSTALL PYTHON
 
 ### A. Download Python Installer
 
@@ -66,7 +66,7 @@ Press `Enter`. Wait 30 seconds.
 ```
 dir %TEMP%\python-installer.exe
 ```
-**Should see**: python-installer.exe (25 MB) ✅
+**Should see**: python-installer.exe (25 MB) 
 
 ### B. Run Python Installer
 
@@ -76,7 +76,7 @@ dir %TEMP%\python-installer.exe
 Press `Enter`
 
 **Installer opens:**
-1. ✅ Check: "Add Python to PATH"
+1.  Check: "Add Python to PATH"
 2. Click "Install Now"
 3. Wait 2-3 minutes.
 4. Click "Close"
@@ -94,9 +94,9 @@ exit
 ```
 python --version
 ```
-**Should see**: `Python 3.11.9` ✅
+**Should see**: `Python 3.11.9` 
 
-**⚠️ IMPORTANT: If you see Python 3.12, 3.13, or 3.14:**
+** IMPORTANT: If you see Python 3.12, 3.13, or 3.14:**
 - These versions are TOO NEW.
 - Packages are not compatible yet.
 - You MUST uninstall and install Python 3.11.9
@@ -107,13 +107,13 @@ python --version
 ```
 where python
 ```
-**Should see**: `C:\Users\...\Python\Python311\python.exe` ✅
+**Should see**: `C:\Users\...\Python\Python311\python.exe` 
 
-**✅ Version is 3.11.9 and path shows Python311? Perfect!**
+** Version is 3.11.9 and path shows Python311? Perfect!**
 
 ---
 
-## 🚀 STEP 5: INSTALL NODE.JS
+##  STEP 5: INSTALL NODE.JS
 
 ### A. Download Node.js Installer
 
@@ -126,7 +126,7 @@ Press `Enter`. Wait 1 minute.
 ```
 dir %TEMP%\node-installer.msi
 ```
-**Should see**: node-installer.msi (30 MB) ✅
+**Should see**: node-installer.msi (30 MB) 
 
 ### B. Run Node.js Installer
 
@@ -157,25 +157,25 @@ exit
 ```
 node --version
 ```
-**Should see**: `v20.11.1` ✅
+**Should see**: `v20.11.1` 
 
 **Check npm version:**
 ```
 npm --version
 ```
-**Should see**: `10.2.4` ✅
+**Should see**: `10.2.4` 
 
 **Check Node path:**
 ```
 where node
 ```
-**Should see**: `C:\Program Files\nodejs\node.exe` ✅
+**Should see**: `C:\Program Files\nodejs\node.exe` 
 
-**✅ All work? Node.js installed correctly!**
+**All work? Node.js installed correctly!**
 
 ---
 
-## 🚀 STEP 6: INSTALL OLLAMA
+##  STEP 6: INSTALL OLLAMA
 
 ### A. Download Ollama Installer
 
@@ -188,7 +188,7 @@ Press `Enter`. Wait 2 minutes.
 ```
 dir %TEMP%\ollama-installer.exe
 ```
-**Should see**: ollama-installer.exe (500 MB) ✅
+**Should see**: ollama-installer.exe (500 MB) 
 
 ### B. Run Ollama Installer
 
@@ -216,19 +216,19 @@ exit
 ```
 ollama --version
 ```
-**Should see**: `ollama version X.X.X` (any version is fine) ✅
+**Should see**: `ollama version X.X.X` (any version is fine) 
 
 **Check path:**
 ```
 where ollama
 ```
-**Should see**: `C:\Users\...\AppData\Local\Programs\Ollama\ollama.exe` ✅
+**Should see**: `C:\Users\...\AppData\Local\Programs\Ollama\ollama.exe` 
 
-**✅ Both work? Ollama installed correctly!**
+** Both work? Ollama installed correctly!**
 
 ---
 
-## 🧠 STEP 7: DOWNLOAD AI MODELS (15-30 Minutes)
+##  STEP 7: DOWNLOAD AI MODELS (15-30 Minutes)
 
 ### A. Download Llama3 (4.7GB)
 
@@ -245,13 +245,13 @@ pulling xxxxx... 100%
 success
 ```
 
-**✅ See "success"? Llama3 downloaded!**
+** See "success"? Llama3 downloaded!**
 
 **Verify:**
 ```
 ollama list
 ```
-**Should see**: `llama3:8b  4.7 GB` ✅
+**Should see**: `llama3:8b  4.7 GB` 
 
 ### B. Download Nomic Embed (274MB)
 
@@ -267,7 +267,7 @@ pulling xxxxx... 100%
 success
 ```
 
-**✅ See "success"? Nomic downloaded!**
+** See "success"? Nomic downloaded!**
 
 **Verify:**
 ```
@@ -279,23 +279,23 @@ llama3:8b              4.7 GB
 nomic-embed-text       274 MB
 ```
 
-**✅ See BOTH? All AI models ready!**
+** See BOTH? All AI models ready!**
 
 **Test AI:**
 ```
 ollama run llama3:8b "Hello"
 ```
-**Should see**: AI response in English ✅
+**Should see**: AI response in English 
 
 Type: `/bye` to exit
 
 ---
 
-## 📦 STEP 8: INSTALL PACKAGES
+##  STEP 8: INSTALL PACKAGES
 
 ### A. Go to App Folder
 
-**⚠️ Replace with YOUR extraction path if different!**
+** Replace with YOUR extraction path if different!**
 
 ```
 cd C:\Saransh-Setu\Saransh-Setu-App-main
@@ -311,7 +311,7 @@ cd D:\MyApps\Saransh-Setu-App-main
 ```
 dir setup.bat
 ```
-**Should see**: setup.bat ✅
+**Should see**: setup.bat 
 
 ### B. Create Virtual Environment
 
@@ -324,7 +324,7 @@ Press `Enter`. Wait 20 seconds.
 ```
 dir backend\venv\Scripts\activate.bat
 ```
-**Should see**: activate.bat ✅
+**Should see**: activate.bat 
 
 ### C. Activate Virtual Environment
 
@@ -338,7 +338,7 @@ Press `Enter`
 (venv) C:\Saransh-Setu\Saransh-Setu-App-main>
 ```
 
-**✅ See "(venv)"? Virtual environment active!**
+** See "(venv)"? Virtual environment active!**
 
 ### D. Install Python Packages (5-10 Minutes)
 
@@ -348,7 +348,7 @@ python -m pip install --upgrade pip
 ```
 Press `Enter`. Wait 10 seconds.
 
-**Should see**: `Successfully installed pip-26.0.1` ✅
+**Should see**: `Successfully installed pip-26.0.1` 
 
 **Now install packages:**
 ```
@@ -361,19 +361,19 @@ Press `Enter`. **Wait 5-10 minutes**.
 Successfully installed fastapi uvicorn chromadb...
 ```
 
-**✅ See "Successfully installed"? Packages installed!**
+** See "Successfully installed"? Packages installed!**
 
 **Verify:**
 ```
 pip list
 ```
-**Should see**: Long list with fastapi, uvicorn, chromadb, ollama, sqlalchemy ✅
+**Should see**: Long list with fastapi, uvicorn, chromadb, ollama, sqlalchemy 
 
 **Verify specific packages:**
 ```
 pip show fastapi
 ```
-**Should see**: Package info for fastapi ✅
+**Should see**: Package info for fastapi 
 
 ### E. Install Electron (2-3 Minutes)
 
@@ -386,7 +386,7 @@ Press `Enter`
 ```
 dir package.json
 ```
-**Should see**: package.json ✅
+**Should see**: package.json 
 
 ```
 npm install
@@ -398,13 +398,13 @@ Press `Enter`. **Wait 2-3 minutes**.
 added 123 packages
 ```
 
-**✅ See "added packages"? Electron installed!**
+** See "added packages"? Electron installed!**
 
 **Verify:**
 ```
 npm list electron
 ```
-**Should see**: `electron@XX.X.X` ✅
+**Should see**: `electron@XX.X.X` 
 
 ```
 cd ..
@@ -415,11 +415,11 @@ Press `Enter`
 ```
 dir setup.bat
 ```
-**Should see**: setup.bat ✅
+**Should see**: setup.bat 
 
 ---
 
-## 👤 STEP 9: CREATE YOUR ACCOUNT
+##  STEP 9: CREATE YOUR ACCOUNT
 
 ### A. Activate Virtual Environment
 
@@ -428,7 +428,7 @@ backend\venv\Scripts\activate
 ```
 Press `Enter`
 
-**Should see**: `(venv)` at start ✅
+**Should see**: `(venv)` at start 
 
 ### B. Create Database
 
@@ -442,13 +442,13 @@ Press `Enter`
 Database created!
 ```
 
-**✅ See "Database created!"? Database ready!**
+** See "Database created!"? Database ready!**
 
 **Verify:**
 ```
 dir backend\saransh_setu.db
 ```
-**Should see**: saransh_setu.db (few KB) ✅
+**Should see**: saransh_setu.db (few KB) 
 
 ### C. Create User Account
 
@@ -470,7 +470,7 @@ Asks: "Enter password:"
 User created!
 ```
 
-**✅ See "User created!"? Account created!**
+** See "User created!"? Account created!**
 
 **Verify:**
 ```
@@ -483,9 +483,9 @@ Total users: 1
 Username: admin
 ```
 
-**✅ See your username? Account saved!**
+** See your username? Account saved!**
 
-### ✍️ WRITE DOWN:
+### WRITE DOWN:
 
 **Username:** _______________
 
@@ -493,7 +493,7 @@ Username: admin
 
 ---
 
-## 🖥️ STEP 10: CREATE DESKTOP SHORTCUT
+##  STEP 10: CREATE DESKTOP SHORTCUT
 
 **First, make sure you're in the app folder:**
 
@@ -509,7 +509,7 @@ powershell -Command "$desktopPath = [Environment]::GetFolderPath('Desktop'); $WS
 ```
 Press `Enter`
 
-**Should see**: `Shortcut created!` ✅
+**Should see**: `Shortcut created!` 
 
 **Check desktop - icon should be there!**
 
@@ -523,40 +523,40 @@ exit
 
 ---
 
-## ✅ STEP 11: FINAL VERIFICATION
+##  STEP 11: FINAL VERIFICATION
 
 Open CMD: Press `Windows Key + R`, type `cmd`, press `Enter`
 
 ```
 python --version
 ```
-✅ `Python 3.11.9`
+ `Python 3.11.9`
 
 ```
 node --version
 ```
-✅ `v20.11.1`
+ `v20.11.1`
 
 ```
 npm --version
 ```
-✅ `10.2.4`
+ `10.2.4`
 
 ```
 ollama --version
 ```
-✅ `ollama version X.X.X` (any version)  
-⚠️ If you see "Warning: could not connect to a running Ollama instance" - this is normal! Ollama will auto-start when you launch the app.
+ `ollama version X.X.X` (any version)  
+ If you see "Warning: could not connect to a running Ollama instance" - this is normal! Ollama will auto-start when you launch the app.
 
 ```
 ollama list
 ```
-✅ Both models listed (llama3:8b and nomic-embed-text)
+ Both models listed (llama3:8b and nomic-embed-text)
 
 ```
 dir C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db
 ```
-✅ Database file exists
+ Database file exists
 
 **Note:** If you extracted to a different location, use YOUR path instead of `C:\Saransh-Setu\`
 
@@ -569,11 +569,11 @@ dir C:\Saransh-Setu\Saransh-Setu-App-main\backend\saransh_setu.db
 exit
 ```
 
-**✅ All checks passed? Installation complete! 🎉**
+** All checks passed? Installation complete! **
 
 ---
 
-## 🎯 HOW TO USE
+##  HOW TO USE
 
 ### Start:
 
@@ -585,31 +585,31 @@ exit
 
 ### Features:
 
-- **📊 Dashboard** - Overview.
-- **📄 Documents** - Upload and summarize.
-- **💼 Meetings** - Log and summarize.
-- **🎤 Speeches** - Generate speeches.
-- **📅 Schedule** - Manage calendar.
-- **🏘️ Constituency** - Track issues
-- **🤖 AI Query** - Ask questions
-- **🌐 Translate** - Translate languages
-- **📋 Audit Logs** - View activity
-- **⚙️ Settings** - Change settings
+- ** Dashboard** - Overview.
+- ** Documents** - Upload and summarize.
+- ** Meetings** - Log and summarize.
+- ** Speeches** - Generate speeches.
+- ** Schedule** - Manage calendar.
+- ** Constituency** - Track issues
+- ** AI Query** - Ask questions
+- ** Translate** - Translate languages
+- ** Audit Logs** - View activity
+- ** Settings** - Change settings
 
 ### Close:
 
-1. Click "🚪 Logout"
+1. Click " Logout"
 2. Close window
 
 ---
 
-## 🌐 Languages
+##  Languages
 
 Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Punjabi, Odia, English
 
 ---
 
-## 🆘 PROBLEMS?
+##  PROBLEMS?
 
 **"not recognized":**
 - Restart computer
